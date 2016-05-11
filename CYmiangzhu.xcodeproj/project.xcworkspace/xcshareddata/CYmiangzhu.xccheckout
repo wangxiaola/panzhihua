@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2B55CA9D-200A-42EB-A4C4-CB2986BA44C7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CYmiangzhu</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>c75c28fc-465f-9048-b4ae-ce90ed4eb30e++1813</key>
+		<string>https://192.168.0.253:4431/svn/mobile_project/IOS/%25E7%2595%2585%25E6%25B8%25B8%25E6%2594%2580%25E6%259E%259D%25E8%258A%25B1%2520</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CYmiangzhu.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>c75c28fc-465f-9048-b4ae-ce90ed4eb30e++1813</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>c75c28fc-465f-9048-b4ae-ce90ed4eb30e++1813</key>
+		<string>https://192.168.0.253:4431/svn/mobile_project</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://192.168.0.253:4431/svn/mobile_project/IOS/%25E7%2595%2585%25E6%25B8%25B8%25E6%2594%2580%25E6%259E%259D%25E8%258A%25B1%2520/CYmiangzhu.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>c75c28fc-465f-9048-b4ae-ce90ed4eb30e++1813</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>c75c28fc-465f-9048-b4ae-ce90ed4eb30e++1813</string>
+			<key>IDESourceControlWCCName</key>
+			<string>%E7%95%85%E6%B8%B8%E6%94%80%E6%9E%9D%E8%8A%B1%20</string>
+		</dict>
+	</array>
+</dict>
+</plist>

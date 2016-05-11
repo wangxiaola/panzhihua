@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ZKSceneManCollectionViewCellID" id="gTV-IL-0wX" customClass="ZKSceneManCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54g-Qm-pvb">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxx旅游" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDi-MF-wT8">
+                                <rect key="frame" x="5" y="10" width="140" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ubd-Zj-CHB">
+                                <rect key="frame" x="5" y="30" width="140" height="45"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdd-OZ-e6u" customClass="RatingBar" customModule="CYmiangzhu" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="8" width="80" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numStars">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="ratingMax">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="xianzhuang_ren"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="xianzhuang_nobody"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isIndicator" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Fdd-OZ-e6u" firstAttribute="centerY" secondItem="Ubd-Zj-CHB" secondAttribute="centerY" id="62v-tR-wS4"/>
+                                    <constraint firstItem="Fdd-OZ-e6u" firstAttribute="top" secondItem="Ubd-Zj-CHB" secondAttribute="topMargin" id="O7u-ML-GPD"/>
+                                    <constraint firstItem="Fdd-OZ-e6u" firstAttribute="centerX" secondItem="Ubd-Zj-CHB" secondAttribute="centerX" id="Rxn-nd-4EA"/>
+                                    <constraint firstItem="Fdd-OZ-e6u" firstAttribute="leading" secondItem="Ubd-Zj-CHB" secondAttribute="leading" constant="30" id="ytX-WF-Vg0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="xianzhuang_ren"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="xianzhuang_nobody"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ratingMax">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isIndicator" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.792156862745098" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="cDi-MF-wT8" firstAttribute="leading" secondItem="54g-Qm-pvb" secondAttribute="leading" constant="5" id="2It-5Z-f9b"/>
+                            <constraint firstItem="Ubd-Zj-CHB" firstAttribute="leading" secondItem="cDi-MF-wT8" secondAttribute="leading" id="E1S-0c-pV1"/>
+                            <constraint firstAttribute="bottom" secondItem="Ubd-Zj-CHB" secondAttribute="bottom" constant="5" id="MaK-k9-Zkg"/>
+                            <constraint firstItem="Ubd-Zj-CHB" firstAttribute="centerX" secondItem="54g-Qm-pvb" secondAttribute="centerX" id="baP-Qf-ZM6"/>
+                            <constraint firstItem="cDi-MF-wT8" firstAttribute="top" secondItem="54g-Qm-pvb" secondAttribute="top" constant="10" id="j7A-LE-vpw"/>
+                            <constraint firstItem="Ubd-Zj-CHB" firstAttribute="trailing" secondItem="cDi-MF-wT8" secondAttribute="trailing" id="mLE-Tw-60t"/>
+                            <constraint firstItem="Ubd-Zj-CHB" firstAttribute="top" secondItem="cDi-MF-wT8" secondAttribute="bottom" constant="5" id="tYj-j5-UR8"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="54g-Qm-pvb" secondAttribute="trailing" id="Tsv-gv-Ivd"/>
+                <constraint firstAttribute="bottom" secondItem="54g-Qm-pvb" secondAttribute="bottom" id="ea4-AQ-deE"/>
+                <constraint firstItem="54g-Qm-pvb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eoA-EK-d7e"/>
+                <constraint firstItem="54g-Qm-pvb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fhw-2f-1FB"/>
+            </constraints>
+            <connections>
+                <outlet property="ratingBar" destination="Fdd-OZ-e6u" id="eUF-Ma-Wi4"/>
+                <outlet property="sceneNameLabel" destination="cDi-MF-wT8" id="vFS-uf-lz8"/>
+            </connections>
+            <point key="canvasLocation" x="118" y="304"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="xianzhuang_nobody" width="24" height="38"/>
+        <image name="xianzhuang_ren" width="24" height="38"/>
+    </resources>
+</document>

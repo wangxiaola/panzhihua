@@ -1,0 +1,187 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+
+#import <Availability.h>
+
+#define BaiduID @"89071c613d"
+
+//加载html的域名
+/**
+ *  诺俊轩
+ *
+ *  @param url
+ *
+ *  @return
+ */
+#define webUrlPrefix  @"http://app.tpanzhihua.com/"
+
+#define webUrl(url) [NSString stringWithFormat:@"%@%@",webUrlPrefix,url]
+/**
+ *  强哥
+ *
+ *  @param url  http://192.168.2.36:8323/ 
+                 http://app.tpanzhihua.com/
+ *
+ *  @return
+ */
+
+#define webUrl1(url) [NSString stringWithFormat:@"%@%@",webUrlPrefix,url]
+/**
+ *  订单支付url
+ *
+ *  @param ZKAppDelegate*
+ *
+ *  @return 
+ */
+#define ORDERURL @"http://pzhtravel.wopen.tv/wapAlipay.jkb"
+
+
+//#universalServerUrl @"http://api.wopen.tv/api/service/"
+/**
+ *  订单创建
+ *
+ *  @param ZKAppDelegate*
+ *
+ *  @return
+ */
+//http://oto.tpanzhihua.com:82/apiserver/api/service
+
+//http://gds.daqsoft.com:8080/apiserver/api/service
+
+#define universalServerUrl @"http://gds.daqsoft.com:8080/apiserver/api/service"
+
+//外网接口地址，不需要改
+#define postUrlPrefix @"http://www.tpanzhihua.com/app/rest.do"
+
+//针对景区现状的接口，不需要改
+#define postUrlPrefix2 @"http://183.221.61.239:83/rest/appPhone"
+
+//所有上传图片后保存的路径前缀，不需要改
+#define imageUrlPrefix @"http://www.tpanzhihua.com/"
+#define DDIMAGE_URL @"http://pzh.geeker.com.cn/"
+//与个人信息有关的接口，不需要改
+#define ZKPostUrl @"http://gds.daqsoft.com:8080/apiserver/api/service"
+
+//通用上传，不需要改
+#define ZKPostImageUrl @"http://gds.daqsoft.com:8080/apiserver/api/uploadapi"
+
+/**
+ *  腾讯
+ *
+ */
+//#define tenxunQQID @"1104005960"
+#define tenxunQQID @"1104831342"
+//#define tenxunQQKEY @"Qhhd1L42NaqL97Vq"
+#define tenxunQQKEY @"zExPdyqEFfdAG7Ds"
+/**
+ *  微信
+ *
+ */
+#define weixinID @"wxdbefa0884a436f6c"
+#define weixinSecret @"aed2133bdc2c3d5a0245b03aa535902c"
+/**
+ *  新浪微博
+ *
+ */
+#define xinlangweipoID @"1174911398"
+#define xinlangweipoSecret @"f65ed1aecad1cd94c09a05920b8ab885"
+/**
+ *  腾讯微博
+ *
+ */
+#define tenxunweipoKEY @"801556717"
+#define tenxunweipoSecret @"5a404cbaf0e7c175da27673abab6a4d9"
+
+//key
+#define gaodeKEY @"03b1140e9f5171a6652f8ef468db3825"
+
+/**
+ *  支付宝
+ */
+
+#define PARTNER @"2088121287826188"
+#define SELLER @"hr@daqsoft.com"
+#define PRIVATEKEY @"MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBALqdb9Luqe7u+J9dAec0Q0ZcueJXph6l217TtnJA2K1rqzXHLHeoekPI7SRX+z4WWhpmqnCvQXwLMQFwpVu9m85DTbOJv0nNK98IAlC0ZS9H+M2iOQSXQHxjgGgyQo9Y9YKhPoY2y9m7onkuW7HInVNbJGfHxwq6icGipGBLtUaTAgMBAAECgYB2dTOjoK4sJnOZrY9ktS8zPe8c92hSshOzeQ6qLfGc++idZYYbms2ps6Sc2mB4g/XEJoFwsD8QP4ZnFJtSxeRdD6ow8ib4x7ioRzkHb/lueMvSJHVc2C3nDOjG6aUxVBi2zRlF5pptY84TY9ig3cWmTWUz/jCYXZWBFjCo3q6pGQJBANxjep8iEF/R22fet8e3ozd+8vXOaGtCuNoYdldmPqfMCpMjEQ/Afa+C0rf+4OZsCsQRFNawgZsLVhx9n7ohhtcCQQDYxOPmqGfwTkdwpimXf83PHzXppIO1IlcJMEqzDTsqJLgMbtitUnvqen7/yW404GewzqC8AKsKhdfpNxVxy9KlAkAK1p2WK9+wRqrKnepd2Qse1JBwRDlgZQSgPSm8vJuCNweiGsxhAO9tbTqdr9wxmMiiwdBLipylGlaeyhLL3ZA7AkAuojTxQ1uQ/BYsauLZv9nz7B/6ErVu+2NEC8qWOIt45otdyV798pfL+uxldN0rrPdBt0InD/G8As1PU9VeNN4tAkBO1jq9HjFlerHcNP+54AdIkFC8xDmJ2HolOl5nNR+OZWIcDaxEoKiPm7ktPxaEBz12ZVLnGo4IvNFCzwfWQlau"
+
+
+//弹出登陆界面次数，每需要登陆时累加1，当只有等于1时才需要弹出，之后就直接提示“请先登录”，否则就是骚扰了
+extern int popLoginCount;
+
+//颜色
+#define ClearColor [UIColor clearColor]
+#define BlackColor [UIColor blackColor]
+#define WhiteColor [UIColor whiteColor]
+#define RedColor [UIColor redColor]
+#define GreenColor [UIColor greenColor]
+#define BlueColor [UIColor blueColor]
+#define GrayColor [UIColor grayColor]
+#define OrangeColor [UIColor orangeColor]
+#define LightGrayColor [UIColor lightGrayColor]
+
+#define kDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+
+//获取物理尺寸
+#define kDeviceWidth [UIScreen mainScreen].bounds.size.width
+#define kDeviceHeight [UIScreen mainScreen].bounds.size.height
+//找widow
+#define APPDELEGATE     ((ZKAppDelegate*)[[UIApplication sharedApplication] delegate])
+//颜色
+#define viewsBackCorl [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1]
+
+#define TabelBackCorl [UIColor colorWithRed:231/255.0 green:231/255.0 blue:231/255.0 alpha:1]
+
+#define CYBColorGreen [UIColor colorWithRed:51/255.0 green:202/255.0 blue:171/255.0 alpha:1]
+
+#define CellBackCorl  [UIColor colorWithRed:231/255.0 green:231/255.0 blue:231/255.0 alpha:1]
+
+#define YJCorl(a,b,c) [UIColor colorWithRed:a/255.0 green:b/255.0 blue:c/255.0 alpha:1]
+
+//图片
+#define ZKImage(name) [UIImage imageNamed:name]
+
+#define IS_IPHONE_5_SCREEN [[UIScreen mainScreen] bounds].size.height >= 568.0f && [[UIScreen mainScreen] bounds].size.height < 1024.0f
+
+#define IOS7 [[[UIDevice currentDevice] systemVersion]floatValue]>=7
+#define IsIOS8 ([[[[UIDevice currentDevice] systemVersion] substringToIndex:1] intValue]>=8.0)
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import"Toast+UIView.h"
+#import "ZKHttp.h"
+#import "ZKUtil.h"
+#import "UConstants.h"
+#import "SVProgressHUD.h"
+//正则
+#import "NSString+Regex.h"
+#import "NSString+URLEncode.h"
+
+#import "Singleton.h"
+#import "UIView+Frame.h"
+#import "ZKUserInfo.h"
+#import "UIImage+CircleImage.h"
+
+#import "NSObject+SBJSON.h"
+#import "MJExtension.h"
+#import "FMDatabase.h"
+#import "ZKBasicViewController.h"
+#import "Masonry.h"
+#import "BaiduMobStat.h"
+
+#endif
+
+#ifndef __OPTIMIZE__
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...) {}
+#endif
+
+

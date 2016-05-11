@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ZKComplaintsListCellID" rowHeight="121" id="KGk-i7-Jjw" customClass="ZKComplaintsListCell">
+            <rect key="frame" x="0.0" y="0.0" width="640" height="121"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="640" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="大酒店（侵权投诉）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYH-dX-ziz">
+                        <rect key="frame" x="8" y="8" width="542" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="GgG-0n-W49"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-3-1 20:33" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PE5-gC-CeM">
+                        <rect key="frame" x="552" y="9" width="80" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="Zr2-fB-MHB"/>
+                            <constraint firstAttribute="width" constant="80" id="s1V-cc-0fc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </label>
+                    <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yF-7t-fGW">
+                        <rect key="frame" x="0.0" y="36" width="640" height="1"/>
+                        <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="thr-2z-Juq"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="十四吉祥物 i 哦的成绩都为 i乘飞机就从我的坚持就从金球奖即从句就哦车几千几万觉得假i" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQU-70-eNk">
+                        <rect key="frame" x="8" y="45" width="624" height="70"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PE5-gC-CeM" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="3Y2-Ff-ysW"/>
+                    <constraint firstItem="PE5-gC-CeM" firstAttribute="leading" secondItem="PYH-dX-ziz" secondAttribute="trailing" constant="2" id="Cp4-Sm-lIR"/>
+                    <constraint firstItem="5yF-7t-fGW" firstAttribute="top" secondItem="PYH-dX-ziz" secondAttribute="bottom" constant="11" id="Jxu-Qo-H9v"/>
+                    <constraint firstItem="PYH-dX-ziz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Rks-XW-pYM"/>
+                    <constraint firstAttribute="bottom" secondItem="mQU-70-eNk" secondAttribute="bottom" constant="5" id="TYO-8g-ZwT"/>
+                    <constraint firstItem="5yF-7t-fGW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="bsJ-2h-aks"/>
+                    <constraint firstItem="mQU-70-eNk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ctf-Gr-FzI"/>
+                    <constraint firstItem="5yF-7t-fGW" firstAttribute="top" secondItem="PYH-dX-ziz" secondAttribute="bottom" constant="11" id="fma-eU-CVC"/>
+                    <constraint firstItem="5yF-7t-fGW" firstAttribute="top" secondItem="PE5-gC-CeM" secondAttribute="bottom" constant="12" id="jlH-jt-fIE"/>
+                    <constraint firstItem="PYH-dX-ziz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="o8q-A2-TGI"/>
+                    <constraint firstAttribute="trailing" secondItem="mQU-70-eNk" secondAttribute="trailing" constant="8" id="tWR-Id-gQo"/>
+                    <constraint firstItem="PE5-gC-CeM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="xFK-ws-IfY"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5yF-7t-fGW" secondAttribute="trailing" constant="-8" id="yAn-Kg-MxC"/>
+                    <constraint firstItem="mQU-70-eNk" firstAttribute="top" secondItem="5yF-7t-fGW" secondAttribute="bottom" constant="8" id="zbM-Sg-ZVV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="infor" destination="mQU-70-eNk" id="asH-ah-k4L"/>
+                <outlet property="name" destination="PYH-dX-ziz" id="Qec-sW-uUV"/>
+                <outlet property="timer" destination="PE5-gC-CeM" id="nqC-Rt-Cr5"/>
+            </connections>
+            <point key="canvasLocation" x="304" y="274.5"/>
+        </tableViewCell>
+    </objects>
+</document>

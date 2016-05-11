@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<meta name="viewport"
+	content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no">
+<link rel="stylesheet" type="text/css" href="base.css">
+<script type="text/javascript" src="jquery.js"></script>
+<!-- 以上为每个页面必须的内容 -->
+<style>
+.bordiv {
+	padding-left: 1rem;
+	box-sizing: border-box;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	background: #fff;
+	margin-top: 1rem
+}
+
+.bgfa {
+	background: #fafafa;
+}
+
+.tLex {
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	padding-right: 1rem;
+	box-sizing: border-box;
+} /*右例框框自适应屏幕宽度*/
+.trafficLine {
+	display: inline-block;
+	width: 0.3rem;
+	height: 1.5rem;
+	background: #ff7a0d;
+	margin-right: 0.3rem;
+	vertical-align: top;
+}
+
+.jt {
+	width: 1.4rem;
+	margin-right: 1rem;
+	vertical-align: top;
+	margin-top: 0.3rem;
+}
+
+.trafficCont {
+	box-sizing: border-box;
+	padding: 1rem 1rem 1rem 0;
+	border-top: 1px solid #e6e6e6;
+}
+
+.trafficCont img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.DescTit2 {
+	display: inline-block;
+	line-height: 1.5rem;
+	height: 1.5rem;
+	font-size: 16px;
+	vertical-align: top
+}
+
+.boxDiv {
+	width: 100%;
+	display: box;
+	display: -webkit-box;
+	text-align: left;
+	border-bottom: 0.3px solid #e6e6e6;
+	padding: 1rem 0;
+	box-sizing: border-box;
+}
+</style>
+</head>
+<body class="bgfa">
+	<div id="all_body">
+		<div class="bordiv" style="margin-top: 0">
+			<div class="boxDiv">
+				<p class="tLex">
+					<span class="trafficLine"></span> <span class="DescTit2">六度+2文化</span>
+				</p>
+				<img src="jt_bottom.png" class="jt"
+					style="-webkit-transform: rotate(180deg);">
+			</div>
+
+			<p class="trafficCont" id="data_id_0" style="display: none;">
+				暂无相关信息</p>
+		</div>
+
+
+		<div class="bordiv">
+			<div class="boxDiv">
+				<p class="tLex">
+					<span class="trafficLine"></span> <span class="DescTit2">康养设施</span>
+				</p>
+				<img src="jt_bottom.png" class="jt"
+					style="-webkit-transform: rotate(180deg);">
+			</div>
+
+			<p class="trafficCont" id="data_id_1" style="display: none;">
+				暂无相关信息</p>
+		</div>
+
+	</div>
+</body>
+<!-- 以下为JS内容 -->
+<script type="text/javascript">
+	$(".boxDiv").click(function() {
+		if ($(this).next(".trafficCont").is(":visible")) {
+			$(this).find(".jt").attr("src", "jt_bottom.png");
+			$(this).css("border-bottom", "none");
+		} else {
+			$(this).find(".jt").attr("src", "jt_top.png");
+			$(this).css("border-bottom", "0.3px solid #e6e6e6");
+		}
+		$(this).next(".trafficCont").slideToggle(300);
+	});
+
+	$(document).ready(function() {
+		setData();
+	});
+
+	function setData() {
+		var html01 = jsCalliOS("liudu");
+		$('#data_id_0').html(
+				html01 == "" || html01 == "null" ? "暂无相关信息" : html01);
+
+		var html02 = jsCalliOS("kyss");
+		$('#data_id_1').html(
+				html02 == "" || html02 == "null" ? "暂无相关信息" : html02);
+	}
+</script>
+</html>

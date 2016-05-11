@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SceneStatusNumberCell" id="LAq-VA-sgy" customClass="ZKSceneStatusNumberCell">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urh-w9-69e" customClass="ZKSceneStatusManCell">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6O-pE-sg7">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+                                <color key="backgroundColor" red="0.29554393000000001" green="0.81711647730000003" blue="0.20310348819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3V8-yY-eyo">
+                                <rect key="frame" x="5" y="30" width="140" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xY9-QO-zwu">
+                                        <rect key="frame" x="55" y="12" width="30" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="6Gi-Hx-RiO"/>
+                                    <constraint firstAttribute="centerX" secondItem="xY9-QO-zwu" secondAttribute="centerX" id="LK6-7R-Q1E"/>
+                                    <constraint firstAttribute="centerY" secondItem="xY9-QO-zwu" secondAttribute="centerY" id="U1P-Fp-0i3"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxx旅游" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndp-PP-63Q">
+                                <rect key="frame" x="5" y="10" width="140" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29554393000000001" green="0.81711647730000003" blue="0.20310348819999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="3V8-yY-eyo" secondAttribute="bottom" constant="5" id="Gsw-sr-r5K"/>
+                            <constraint firstAttribute="trailing" secondItem="Ndp-PP-63Q" secondAttribute="trailing" constant="5" id="IJn-JW-Qo4"/>
+                            <constraint firstItem="Ndp-PP-63Q" firstAttribute="leading" secondItem="urh-w9-69e" secondAttribute="leading" constant="5" id="J0h-o1-N7w"/>
+                            <constraint firstItem="l6O-pE-sg7" firstAttribute="leading" secondItem="urh-w9-69e" secondAttribute="leading" id="Lca-Lm-LSa"/>
+                            <constraint firstAttribute="bottom" secondItem="l6O-pE-sg7" secondAttribute="bottom" id="VxP-KM-85D"/>
+                            <constraint firstItem="l6O-pE-sg7" firstAttribute="top" secondItem="urh-w9-69e" secondAttribute="top" id="azF-Ma-kyT"/>
+                            <constraint firstAttribute="trailing" secondItem="3V8-yY-eyo" secondAttribute="trailing" constant="5" id="bXc-Vj-ZPW"/>
+                            <constraint firstItem="Ndp-PP-63Q" firstAttribute="top" secondItem="urh-w9-69e" secondAttribute="top" constant="10" id="jwj-7A-Evh"/>
+                            <constraint firstAttribute="trailing" secondItem="l6O-pE-sg7" secondAttribute="trailing" id="l8J-eb-yER"/>
+                            <constraint firstAttribute="centerX" secondItem="Ndp-PP-63Q" secondAttribute="centerX" id="odb-Zh-isF"/>
+                            <constraint firstItem="3V8-yY-eyo" firstAttribute="leading" secondItem="urh-w9-69e" secondAttribute="leading" constant="5" id="rRk-Q0-whi"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="urh-w9-69e" secondAttribute="trailing" id="AaP-fp-0Wx"/>
+                <constraint firstItem="urh-w9-69e" firstAttribute="top" secondItem="LAq-VA-sgy" secondAttribute="top" id="XJd-Jq-PXc"/>
+                <constraint firstItem="urh-w9-69e" firstAttribute="leading" secondItem="LAq-VA-sgy" secondAttribute="leading" id="YEI-gy-6H6"/>
+                <constraint firstAttribute="bottom" secondItem="urh-w9-69e" secondAttribute="bottom" id="zej-RD-KQs"/>
+            </constraints>
+            <size key="customSize" width="312" height="226"/>
+            <connections>
+                <outlet property="bgView" destination="l6O-pE-sg7" id="inR-6n-nWI"/>
+                <outlet property="peopleNumberLabel" destination="xY9-QO-zwu" id="go6-U6-Kma"/>
+                <outlet property="sceneNameLabel" destination="Ndp-PP-63Q" id="KJD-r2-g7N"/>
+            </connections>
+            <point key="canvasLocation" x="258" y="143"/>
+        </collectionViewCell>
+    </objects>
+</document>

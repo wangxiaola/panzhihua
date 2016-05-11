@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZKADViewController">
+            <connections>
+                <outlet property="adImageView" destination="yNs-H6-6Ap" id="gKr-JJ-frx"/>
+                <outlet property="view" destination="nLm-1u-1gs" id="4Ns-sO-RqL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="nLm-1u-1gs">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="yNs-H6-6Ap">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <animations/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="FJM-7E-R97" appends="YES" id="be9-pj-1oD"/>
+                    </connections>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIU-tQ-Xbw">
+                    <rect key="frame" x="510" y="30" width="60" height="30"/>
+                    <animations/>
+                    <state key="normal" title="进入主页">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="enterHom" destination="-1" eventType="touchUpInside" id="F1l-PA-2VG"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dIU-tQ-Xbw" secondAttribute="trailing" constant="30" id="1hh-qm-q02"/>
+                <constraint firstItem="yNs-H6-6Ap" firstAttribute="top" secondItem="nLm-1u-1gs" secondAttribute="top" id="IcH-Tr-pMe"/>
+                <constraint firstItem="yNs-H6-6Ap" firstAttribute="leading" secondItem="nLm-1u-1gs" secondAttribute="leading" id="KAA-ms-6fV"/>
+                <constraint firstAttribute="trailing" secondItem="yNs-H6-6Ap" secondAttribute="trailing" id="Osu-rU-TwL"/>
+                <constraint firstAttribute="bottom" secondItem="yNs-H6-6Ap" secondAttribute="bottom" id="fML-QT-uf9"/>
+                <constraint firstItem="dIU-tQ-Xbw" firstAttribute="top" secondItem="nLm-1u-1gs" secondAttribute="top" constant="30" id="kum-yp-yzo"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="641" y="-188"/>
+        </view>
+        <tapGestureRecognizer id="FJM-7E-R97">
+            <connections>
+                <action selector="enterAD" destination="-1" id="MYg-IV-BrJ"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="Default.png" width="320" height="480"/>
+    </resources>
+</document>

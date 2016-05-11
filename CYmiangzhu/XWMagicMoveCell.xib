@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="XWMagicMoveCell">
+            <rect key="frame" x="0.0" y="0.0" width="241" height="192"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="241" height="192"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="微信支付" translatesAutoresizingMaskIntoConstraints="NO" id="Xds-yQ-Hj3">
+                        <rect key="frame" x="0.0" y="0.0" width="241" height="192"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是测试" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfo-9v-MkR">
+                        <rect key="frame" x="15" y="20" width="211" height="152"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="Sfo-9v-MkR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="0SY-sX-n5v"/>
+                <constraint firstItem="Sfo-9v-MkR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Bhi-L1-RBI"/>
+                <constraint firstAttribute="trailing" secondItem="Sfo-9v-MkR" secondAttribute="trailing" constant="15" id="Bjd-Rn-9YI"/>
+                <constraint firstAttribute="bottom" secondItem="Sfo-9v-MkR" secondAttribute="bottom" constant="20" id="CDo-xV-7tR"/>
+                <constraint firstAttribute="trailing" secondItem="Xds-yQ-Hj3" secondAttribute="trailing" id="UQE-zj-23o"/>
+                <constraint firstItem="Xds-yQ-Hj3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YAd-Ug-9g1"/>
+                <constraint firstAttribute="bottom" secondItem="Xds-yQ-Hj3" secondAttribute="bottom" id="fWi-Kz-QeS"/>
+                <constraint firstItem="Xds-yQ-Hj3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jPI-85-sJj"/>
+            </constraints>
+            <size key="customSize" width="241" height="192"/>
+            <connections>
+                <outlet property="imageView" destination="Xds-yQ-Hj3" id="xDe-t6-v91"/>
+                <outlet property="nameLabel" destination="Sfo-9v-MkR" id="Kd6-GB-UmO"/>
+            </connections>
+            <point key="canvasLocation" x="240.5" y="317"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="微信支付" width="34" height="34"/>
+    </resources>
+</document>

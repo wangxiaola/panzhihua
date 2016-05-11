@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SceneStatusManCellD" id="gTV-IL-0wX" customClass="ZKSceneStatusManCell">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiY-tq-MC5" customClass="ZKSceneStatusManCell">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCy-6q-Jh3">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="80"/>
+                                <color key="backgroundColor" red="0.29554393000000001" green="0.81711647730000003" blue="0.20310348819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GoI-fh-04R" customClass="RatingBar" customModule="CYmiangzhu" customModuleProvider="target">
+                                <rect key="frame" x="5" y="30" width="140" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="th1-1f-5Ff"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="ic_ratingbar_star_light.png"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="ic_ratingbar_star_dark.png"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ratingMax">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isIndicator" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxx旅游" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IER-19-fOu">
+                                <rect key="frame" x="5" y="10" width="140" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29554392997655227" green="0.81711647727272729" blue="0.20310348818100971" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="IER-19-fOu" secondAttribute="centerX" id="831-b8-4FZ"/>
+                            <constraint firstAttribute="bottom" secondItem="GoI-fh-04R" secondAttribute="bottom" constant="5" id="BFh-gl-vSt"/>
+                            <constraint firstItem="rCy-6q-Jh3" firstAttribute="top" secondItem="aiY-tq-MC5" secondAttribute="top" id="C71-Zn-BK0"/>
+                            <constraint firstAttribute="trailing" secondItem="GoI-fh-04R" secondAttribute="trailing" constant="5" id="Drx-dK-B6W"/>
+                            <constraint firstItem="IER-19-fOu" firstAttribute="top" secondItem="aiY-tq-MC5" secondAttribute="top" constant="10" id="Hsh-tH-Kv2"/>
+                            <constraint firstAttribute="trailing" secondItem="rCy-6q-Jh3" secondAttribute="trailing" id="KGR-55-c6d"/>
+                            <constraint firstItem="rCy-6q-Jh3" firstAttribute="leading" secondItem="aiY-tq-MC5" secondAttribute="leading" id="eAU-UZ-eBh"/>
+                            <constraint firstItem="GoI-fh-04R" firstAttribute="leading" secondItem="aiY-tq-MC5" secondAttribute="leading" constant="5" id="fjX-NO-jXN"/>
+                            <constraint firstItem="IER-19-fOu" firstAttribute="leading" secondItem="aiY-tq-MC5" secondAttribute="leading" constant="5" id="kwD-0o-hk5"/>
+                            <constraint firstAttribute="bottom" secondItem="rCy-6q-Jh3" secondAttribute="bottom" id="w96-cL-Qlc"/>
+                            <constraint firstAttribute="trailing" secondItem="IER-19-fOu" secondAttribute="trailing" constant="5" id="wpX-6a-aQe"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="aiY-tq-MC5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BEV-Li-AJL"/>
+                <constraint firstAttribute="bottom" secondItem="aiY-tq-MC5" secondAttribute="bottom" id="BSu-dh-R25"/>
+                <constraint firstAttribute="trailing" secondItem="aiY-tq-MC5" secondAttribute="trailing" id="Bvp-ar-JBn"/>
+                <constraint firstItem="aiY-tq-MC5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Nwd-mt-YoC"/>
+            </constraints>
+            <size key="customSize" width="312" height="226"/>
+            <connections>
+                <outlet property="bgView" destination="rCy-6q-Jh3" id="nEF-iv-T5d"/>
+                <outlet property="ratingBar" destination="GoI-fh-04R" id="KkA-FV-6AZ"/>
+                <outlet property="sceneNameLabel" destination="IER-19-fOu" id="4VX-vH-HyK"/>
+            </connections>
+            <point key="canvasLocation" x="103" y="232"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_ratingbar_star_dark.png" width="14" height="14"/>
+        <image name="ic_ratingbar_star_light.png" width="14" height="14"/>
+    </resources>
+</document>
