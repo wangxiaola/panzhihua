@@ -1,5 +1,5 @@
 //
-//  ZKNewHomeHeaderView.h
+//  ZKNewHomeTableViewCell.h
 //  CYmiangzhu
 //
 //  Created by 王小腊 on 16/5/11.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZKNewHomeHeaderView : UIView
+extern NSString *const ZKNewHomeTableViewCellID;
 
-@property (nonatomic, copy) id conten;
+@interface ZKNewHomeTableViewCell : UITableViewCell
 
 @end

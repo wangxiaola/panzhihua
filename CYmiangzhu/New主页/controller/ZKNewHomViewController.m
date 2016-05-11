@@ -9,11 +9,15 @@
 #import "ZKNewHomViewController.h"
 #import "YYSearchBar.h"
 #import "ZKNewHomeHeaderView.h"
+#import "ZKNewHomeTableViewCell.h"
 
 @interface ZKNewHomViewController ()<UISearchBarDelegate>
 
 @property (nonatomic, strong) YYSearchBar *searchBar;
 @property (nonatomic, strong) ZKNewHomeHeaderView *headerView;
+@property (nonatomic, strong) UITableView *homeTableView;
+
+
 @end
 
 @implementation ZKNewHomViewController
@@ -32,6 +36,43 @@
     return _searchBar;
 
 }
+- (UITableView *)homeTableView
+{
+
+    if (!_homeTableView) {
+        
+        _homeTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, self.view.frame.size.height) style:UITableViewStylePlain];
+        _homeTableView.backgroundColor = YJCorl(231, 231, 231);
+        //去掉plain样式下多余的分割线
+        _homeTableView.tableFooterView = [[UIView alloc] init];
+        //设置分割线左边无边距，默认是15
+        _homeTableView.separatorInset = UIEdgeInsetsZero;
+
+        _homeTableView.estimatedRowHeight=200; //预估行高 可以提高性能
+        _homeTableView.delegate =self;
+        _homeTableView.dataSource = self;
+        _homeTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+//        [_homeTableView registerClass: forCellReuseIdentifier:<#(nonnull NSString *)#>];
+
+        
+    }
+    
+    return _homeTableView;
+
+}
+- (ZKNewHomeHeaderView *)headerView
+{
+
+    if (!_headerView) {
+        
+        _headerView = [[ZKNewHomeHeaderView alloc]initWithFrame:CGRectMake(0, 0, kDeviceWidth, 800/3)];
+        _headerView.conten = self;
+        
+    }
+    
+    return _headerView;
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -44,7 +85,9 @@
 {
     self.navigationItem.titleView = self.searchBar;
 
-
+    [self.view addSubview:self.homeTableView];
+    self.homeTableView.tableHeaderView = self.headerView;
+    
 
 }
 

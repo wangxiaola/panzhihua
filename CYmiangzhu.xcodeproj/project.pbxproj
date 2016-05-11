@@ -534,6 +534,8 @@
 		3B5F12A51CE32D22009814BE /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F12991CE32D22009814BE /* View+MASAdditions.m */; };
 		3B5F12A61CE32D22009814BE /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F129C1CE32D22009814BE /* ViewController+MASAdditions.m */; };
 		3B5F12AA1CE32DD9009814BE /* ZKNewHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F12A91CE32DD9009814BE /* ZKNewHomeHeaderView.m */; };
+		3B5F12AD1CE332AF009814BE /* ZKNewHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F12AC1CE332AF009814BE /* ZKNewHomeTableViewCell.m */; };
+		3B5F12B01CE332C9009814BE /* ZKNewHomeMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F12AF1CE332C9009814BE /* ZKNewHomeMode.m */; };
 		3B615D7F1C43410F003F66DE /* ZKticketListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B615D7E1C43410F003F66DE /* ZKticketListViewController.m */; };
 		3B615D831C43537B003F66DE /* ZKticketMOde.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B615D821C43537B003F66DE /* ZKticketMOde.m */; };
 		3B615D861C43599B003F66DE /* ZKticketInforMOde.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B615D851C43599B003F66DE /* ZKticketInforMOde.m */; };
@@ -1599,6 +1601,10 @@
 		3B5F129C1CE32D22009814BE /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		3B5F12A81CE32DD9009814BE /* ZKNewHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKNewHomeHeaderView.h; sourceTree = "<group>"; };
 		3B5F12A91CE32DD9009814BE /* ZKNewHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKNewHomeHeaderView.m; sourceTree = "<group>"; };
+		3B5F12AB1CE332AF009814BE /* ZKNewHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKNewHomeTableViewCell.h; sourceTree = "<group>"; };
+		3B5F12AC1CE332AF009814BE /* ZKNewHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKNewHomeTableViewCell.m; sourceTree = "<group>"; };
+		3B5F12AE1CE332C9009814BE /* ZKNewHomeMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKNewHomeMode.h; sourceTree = "<group>"; };
+		3B5F12AF1CE332C9009814BE /* ZKNewHomeMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKNewHomeMode.m; sourceTree = "<group>"; };
 		3B615D7D1C43410F003F66DE /* ZKticketListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKticketListViewController.h; sourceTree = "<group>"; };
 		3B615D7E1C43410F003F66DE /* ZKticketListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKticketListViewController.m; sourceTree = "<group>"; };
 		3B615D811C43537B003F66DE /* ZKticketMOde.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKticketMOde.h; sourceTree = "<group>"; };
@@ -3559,6 +3565,8 @@
 		3B5F127E1CE3180F009814BE /* mode */ = {
 			isa = PBXGroup;
 			children = (
+				3B5F12AE1CE332C9009814BE /* ZKNewHomeMode.h */,
+				3B5F12AF1CE332C9009814BE /* ZKNewHomeMode.m */,
 			);
 			path = mode;
 			sourceTree = "<group>";
@@ -3566,6 +3574,8 @@
 		3B5F127F1CE3180F009814BE /* view */ = {
 			isa = PBXGroup;
 			children = (
+				3B5F12AB1CE332AF009814BE /* ZKNewHomeTableViewCell.h */,
+				3B5F12AC1CE332AF009814BE /* ZKNewHomeTableViewCell.m */,
 				3B5F12A81CE32DD9009814BE /* ZKNewHomeHeaderView.h */,
 				3B5F12A91CE32DD9009814BE /* ZKNewHomeHeaderView.m */,
 			);
@@ -4760,6 +4770,7 @@
 				12BF1A551B42423F000E526B /* AsyncUdpSocket.m in Sources */,
 				A17005311C1882A300119402 /* MJRefreshGifHeader.m in Sources */,
 				A17005421C18830B00119402 /* ZKSceneryTicketCell.m in Sources */,
+				3B5F12B01CE332C9009814BE /* ZKNewHomeMode.m in Sources */,
 				EA2E72FA1C2D2A07009178F1 /* ZKLiveInPZHViewController.m in Sources */,
 				EA2E41101C1A944C0048AF54 /* ZKContainerLikeViewController.m in Sources */,
 				3B47DA371CCF6BFE00AF9095 /* ZKStategImageWidth.m in Sources */,
@@ -4828,6 +4839,7 @@
 				3B5F12A11CE32D22009814BE /* MASViewAttribute.m in Sources */,
 				3B615D931C4383C6003F66DE /* ZKVoiceView.m in Sources */,
 				127530D11B4E1EAF00021FB3 /* SDCollectionViewCell.m in Sources */,
+				3B5F12AD1CE332AF009814BE /* ZKNewHomeTableViewCell.m in Sources */,
 				12C81EFB1B15911500E61804 /* AFURLResponseSerialization.m in Sources */,
 				EA1411EF1C22A7FE0031DEB6 /* ZKFootprintModel.m in Sources */,
 				3B4BBCAD1C44A25200AD92DD /* ZKBookRoomCell.m in Sources */,

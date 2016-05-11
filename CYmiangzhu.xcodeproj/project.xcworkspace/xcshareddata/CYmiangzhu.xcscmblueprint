@@ -1,21 +1,28 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "c75c28fc-465f-9048-b4ae-ce90ed4eb30e++1813",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "64AF502F9601531254C75C339343579317A5B0BE",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "c75c28fc-465f-9048-b4ae-ce90ed4eb30e++1813" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "64AF502F9601531254C75C339343579317A5B0BE" : 0,
     "c75c28fc-465f-9048-b4ae-ce90ed4eb30e++1813" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2B55CA9D-200A-42EB-A4C4-CB2986BA44C7",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "64AF502F9601531254C75C339343579317A5B0BE" : "%E7%95%85%E6%B8%B8%E6%94%80%E6%9E%9D%E8%8A%B1\/",
     "c75c28fc-465f-9048-b4ae-ce90ed4eb30e++1813" : "%E7%95%85%E6%B8%B8%E6%94%80%E6%9E%9D%E8%8A%B1%20\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "CYmiangzhu",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CYmiangzhu.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wangxiaola\/-.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "64AF502F9601531254C75C339343579317A5B0BE"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.0.253:4431\/svn\/mobile_project",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
