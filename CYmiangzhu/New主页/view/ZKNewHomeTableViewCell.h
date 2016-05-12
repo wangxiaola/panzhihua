@@ -23,8 +23,6 @@ typedef NS_ENUM(NSInteger,homecellTyper) {
 
 @class ZKNewHomeMode;
 
-static  NSString *homeIndentifierOne=@"homeCellOne";
-static  NSString *homeIndentifierTow=@"homeCellTwo";
 
 #define cellHeight 500/3
 
@@ -40,9 +38,11 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
 
 @property (nonatomic, strong) UILabel *stateLabel;
 
+@property (nonatomic) homecellTyper cellType;
 
 
-- (void)initSuperViews:(homecellTyper)typer;
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier SuperViews:(homecellTyper)typer;
+
 
 - (void)setData:(ZKNewHomeMode*)list cellTyper:(homecellTyper)typer;
 

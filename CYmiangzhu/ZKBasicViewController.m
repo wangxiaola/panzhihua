@@ -2563,7 +2563,7 @@ int popLoginCount = 0;
         
         NSString *_encodedImageStr = [_data base64EncodedStringWithOptions:0];
         
-        NSString *sign =[NSString stringWithFormat:@"fot_%d",i+1+numphotograph];
+        NSString *sign =[NSString stringWithFormat:@"fot_%ld",i+1+numphotograph];
         
         [self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"fun_z_returnMulofpics('data:image/png;base64,%@#%@')",_encodedImageStr,sign]];
         

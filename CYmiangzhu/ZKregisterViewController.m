@@ -345,7 +345,7 @@ NSString *const ZKUserDidLoginedNotification = @"ZKUserDidLoginedNotification";
 {
     [ZKUserInfo sharedZKUserInfo].name = [userInfo nickname];
     [ZKUserInfo sharedZKUserInfo].photo = [userInfo profileImage];
-    [ZKUserInfo sharedZKUserInfo].sex = [NSString stringWithFormat:@"%d", [userInfo gender]];
+    [ZKUserInfo sharedZKUserInfo].sex = [NSString stringWithFormat:@"%ld", (long)[userInfo gender]];
     [[ZKUserInfo sharedZKUserInfo] saveUserInfo];
 }
 

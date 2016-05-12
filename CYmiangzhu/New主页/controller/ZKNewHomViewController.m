@@ -14,6 +14,9 @@
 #import "ZKNewHomeMode.h"
 #import "MJRefresh.h"
 
+static  NSString *homeIndentifierOne=@"homeCellOne";
+static  NSString *homeIndentifierTow=@"homeCellTwo";
+
 @interface ZKNewHomViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) YYSearchBar *searchBar;
@@ -76,8 +79,6 @@
         _homeTableView.dataSource = self;
         _homeTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         
-        [_homeTableView registerClass:[ZKNewHomeTableViewCell class] forCellReuseIdentifier:homeIndentifierOne];
-        [_homeTableView registerClass:[ZKNewHomeTableViewCell class] forCellReuseIdentifier:homeIndentifierTow];
         
         [_homeTableView registerNib:[UINib nibWithNibName:@"ZKNewHomeButtonTableViewCell" bundle:nil] forCellReuseIdentifier:ZKNewHomeButtonTableViewCellID];
         
@@ -294,17 +295,30 @@
 
         if (indexPath.section == 1) {
             
-            ZKNewHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:homeIndentifierOne];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
-            [cell initSuperViews:homecellOne];
+            ZKNewHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:homeIndentifierOne];
+            
+            if (cell == nil) {
+                
+                cell = [[ZKNewHomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:homeIndentifierOne SuperViews:homecellOne];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+            
+            [cell setData:nil cellTyper:homecellOne];
+            
             return cell;
         }else{
             
             ZKNewHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:homeIndentifierTow];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
-            [cell initSuperViews:homecellTow];
+            if (cell == nil) {
+                
+                cell = [[ZKNewHomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:homeIndentifierTow SuperViews:homecellTow];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+            
+            [cell setData:nil cellTyper:homecellTow];
+            
             return cell;
         }
    
@@ -327,20 +341,20 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if (indexPath.section  == 1) {
-        
-        ZKNewHomeTableViewCell *homeCell =(ZKNewHomeTableViewCell*)cell;
-        
-        [homeCell setData:nil cellTyper:homecellOne];
-        
-    }else if (indexPath.section == 2)
-    {
-    
-        ZKNewHomeTableViewCell *homeCell =(ZKNewHomeTableViewCell*)cell;
-        
-        [homeCell setData:nil cellTyper:homecellTow];
-        
-    }
+//    if (indexPath.section  == 1) {
+//        
+//        ZKNewHomeTableViewCell *homeCell =(ZKNewHomeTableViewCell*)cell;
+//        
+//        [homeCell setData:nil cellTyper:homecellOne];
+//        
+//    }else if (indexPath.section == 2)
+//    {
+//    
+//        ZKNewHomeTableViewCell *homeCell =(ZKNewHomeTableViewCell*)cell;
+//        
+//        [homeCell setData:nil cellTyper:homecellTow];
+//        
+//    }
 
     
 }

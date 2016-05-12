@@ -17,9 +17,11 @@
 }
 
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier SuperViews:(homecellTyper)typer;
 {
     if ([super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        
+        self.cellType = typer;
         
         self.pictureView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, cellHeight)];
         self.pictureView.backgroundColor = [UIColor whiteColor];
@@ -32,7 +34,7 @@
         [self addSubview:self.backImageView];
         
        
-
+        [self initSuperViews:typer];
     }
 
     return self;
@@ -42,6 +44,7 @@
 - (void)initSuperViews:(homecellTyper)typer;
 
 {
+    
     if (typer == homecellOne)
     {
         
@@ -61,12 +64,7 @@
         self.lefImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
         [self.backImageView addSubview:self.lefImageView];
         
-        [self.lefImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.width.height.mas_equalTo(38);
-            make.left.mas_equalTo(self.backImageView.mas_left).offset(8);
-            make.bottom.mas_equalTo(self.backImageView.mas_bottom).offset(-8);
-        }];
+       
         self.lefImageView.layer.masksToBounds = YES;
         self.lefImageView.layer.cornerRadius = 19;
         self.lefImageView.layer.borderWidth = 2;
@@ -77,29 +75,18 @@
         self.inforLabel.textColor = [UIColor whiteColor];
         self.inforLabel.font = [UIFont systemFontOfSize:14];
         [self.backImageView addSubview:self.inforLabel];
-        [self.inforLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.left.mas_equalTo(self.lefImageView.mas_right).offset(4);
-            make.top.mas_equalTo(self.lefImageView.mas_top);
-            make.height.mas_equalTo(18);
-        }];
-        
+              
         self.stateLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         self.stateLabel.backgroundColor = [UIColor clearColor];
         self.stateLabel.textColor = [UIColor whiteColor];
         self.stateLabel.font = [UIFont systemFontOfSize:13];
         [self.backImageView addSubview:self.stateLabel];
         
-        [self.stateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.left.mas_equalTo(self.lefImageView.mas_right).offset(4);
-            make.bottom.mas_equalTo(self.lefImageView.mas_bottom);
-            make.height.mas_equalTo(18);
-        }];
-    }
+          }
     
 
 }
+
 
 - (void)setData:(ZKNewHomeMode*)list cellTyper:(homecellTyper)typer;
 {
@@ -111,13 +98,7 @@
         NSString *str = @"哇卡卡，这不是我吗？";
         
         self.inforLabel.text = str;
-        NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:14]};
-        CGSize size = [str boundingRectWithSize:CGSizeMake(kDeviceWidth-20, 20) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
-        
-        float labelWidth =size.width;
-        
-        self.inforLabel.frame = CGRectMake(-10, self.backImageView.frame.size.height-30,labelWidth+15,20);
-
+       
     }
     else
     {
@@ -132,7 +113,48 @@
   }
 
 
+- (void)layoutSubviews
+{
 
+    if (self.cellType == homecellOne)
+    {
+        
+        NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:14]};
+        CGSize size = [self.inforLabel.text boundingRectWithSize:CGSizeMake(kDeviceWidth-20, 20) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
+        
+        float labelWidth =size.width;
+        
+        self.inforLabel.frame = CGRectMake(-10, self.backImageView.frame.size.height-30,labelWidth+15,20);
+
+    }
+    else if(self.cellType == homecellTow)
+    {
+    
+        
+        [self.lefImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.width.height.mas_equalTo(38);
+            make.left.mas_equalTo(self.backImageView.mas_left).offset(8);
+            make.bottom.mas_equalTo(self.backImageView.mas_bottom).offset(-8);
+        }];
+        [self.inforLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.left.mas_equalTo(self.lefImageView.mas_right).offset(4);
+            make.top.mas_equalTo(self.lefImageView.mas_top);
+            make.height.mas_equalTo(18);
+        }];
+        [self.stateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.left.mas_equalTo(self.lefImageView.mas_right).offset(4);
+            make.bottom.mas_equalTo(self.lefImageView.mas_bottom);
+            make.height.mas_equalTo(18);
+        }];
+
+        
+    
+    }
+
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

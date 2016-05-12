@@ -172,8 +172,8 @@
     bty.layer.masksToBounds =YES;
     bty.layer.cornerRadius =4;
     
-    [bty setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"share_%d",tag]] forState:UIControlStateNormal];
-    [bty setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"share_%d%d",tag,tag]] forState:UIControlStateHighlighted];
+    [bty setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"share_%ld",(long)tag]] forState:UIControlStateNormal];
+    [bty setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"share_%ld%ld",(long)tag,(long)tag]] forState:UIControlStateHighlighted];
     bty.tag =2000+tag;
     [bty addTarget:self action:@selector(sharaButton:) forControlEvents:UIControlEventTouchUpInside];
     [views addSubview:bty];

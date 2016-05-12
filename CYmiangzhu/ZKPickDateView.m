@@ -98,7 +98,7 @@
             }else{
             
                 numTimer ++;
-                str =[NSString stringWithFormat:@"%d点",numTimer];
+                str =[NSString stringWithFormat:@"%ld点",(long)numTimer];
             
             }
             
@@ -204,7 +204,7 @@
     if ([tpyehh isEqualToString:@"现在"] ) {
         
         NSInteger k =[[smallArray objectAtIndex:j+1] integerValue]-1;
-        tpyehh =[NSString stringWithFormat:@"%d",k];
+        tpyehh =[NSString stringWithFormat:@"%ld",(long)k];
     }
     
     
@@ -240,7 +240,7 @@
         // 设置第1列的行数
         
         // 获取到第0列 选中的是哪一行
-        int i = [pickerView selectedRowInComponent:0];
+        NSInteger i = [pickerView selectedRowInComponent:0];
         
         NSMutableArray *smallArray = [_rightArray objectAtIndex:i];
         
@@ -266,7 +266,7 @@
     else
     {
         // 获取到第0列 选中的是哪一行
-        int i = [pickerView selectedRowInComponent:0];
+        NSInteger i = [pickerView selectedRowInComponent:0];
         
         // 先根据左边选中的是哪一行 从大数组中取出一个小数组(目的是确定一下哪个小数组中放了要显示的标题)
         NSMutableArray *smallArray = [_rightArray objectAtIndex:i];

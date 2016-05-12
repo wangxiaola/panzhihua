@@ -187,7 +187,7 @@
         return dateStr>=newStr ? YES:NO;
     
     }
-    NSLog(@"%d -- %d",dateStr,newStr);
+    NSLog(@"%ld -- %ld",(long)dateStr,(long)newStr);
     
     
     

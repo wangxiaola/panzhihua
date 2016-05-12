@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -12,14 +12,14 @@
             <rect key="frame" x="0.0" y="0.0" width="500" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="500" height="149"/>
+                <rect key="frame" x="0.0" y="0.0" width="500" height="149.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newHomeButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="oIX-1I-QyQ">
                         <rect key="frame" x="0.0" y="0.0" width="500" height="149"/>
                     </imageView>
                     <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALc-t8-Wwb">
-                        <rect key="frame" x="0.0" y="0.0" width="167" height="75"/>
+                        <rect key="frame" x="0.0" y="0.0" width="166.5" height="74.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                         <state key="normal" title="康养指南" image="newHmeButton_0.png">
@@ -30,7 +30,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeR-Fj-NUC">
-                        <rect key="frame" x="333" y="75" width="167" height="74"/>
+                        <rect key="frame" x="333" y="74" width="166.5" height="74.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                         <state key="normal" title="旅游季节" image="newHmeButton_5.png">
@@ -52,7 +52,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChC-Ud-vX8">
-                        <rect key="frame" x="167" y="0.0" width="166" height="75"/>
+                        <rect key="frame" x="166.5" y="0.0" width="167" height="74.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                         <state key="normal" title="自驾游" image="newHmeButton_1.png">
@@ -63,7 +63,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LV3-kJ-GHY">
-                        <rect key="frame" x="333" y="0.0" width="167" height="75"/>
+                        <rect key="frame" x="333" y="0.0" width="166.5" height="74.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                         <state key="normal" title="720全景" image="newHmeButton_2.png">
@@ -81,7 +81,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UiP-vR-dSD">
-                        <rect key="frame" x="166" y="0.0" width="1" height="149"/>
+                        <rect key="frame" x="165" y="0.0" width="1" height="149"/>
                         <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1" id="qXG-YX-zyw"/>
@@ -95,7 +95,7 @@
                         </constraints>
                     </view>
                     <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZx-ha-ubs">
-                        <rect key="frame" x="0.0" y="75" width="167" height="74"/>
+                        <rect key="frame" x="0.0" y="74" width="166.5" height="74.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                         <state key="normal" title="找旅行社" image="newHmeButton_3.png">
