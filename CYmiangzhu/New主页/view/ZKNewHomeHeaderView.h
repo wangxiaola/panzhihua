@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDCycleScrollView.h"
 
-@interface ZKNewHomeHeaderView : UIView
+@interface ZKNewHomeHeaderView : UIView<SDCycleScrollViewDelegate>
 
-@property (nonatomic, copy) id conten;
+@property (nonatomic, weak) id controller;
+
+@property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
+
+@property (nonatomic, strong) NSMutableArray *imageArray;
 
 @end

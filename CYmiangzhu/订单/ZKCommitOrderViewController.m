@@ -234,7 +234,7 @@
      [dic setObject:@"10" forKey:@"interfaceId"];
      [dic setObject:@"createOrder" forKey:@"method"];
      [dic setObject:self.production.pzh_productID forKey:@"pid"];
-     [dic setObject:[NSString stringWithFormat:@"%ld",[self.countTextField.text integerValue]] forKey:@"buynum"];
+     [dic setObject:[NSString stringWithFormat:@"%d",[self.countTextField.text integerValue]] forKey:@"buynum"];
      [dic setObject:self.production.pzh_price forKey:@"price"];
      [dic setObject:self.nameTextField.text forKey:@"name"];
      [dic setObject:self.phoneTextField.text forKey:@"phone"];

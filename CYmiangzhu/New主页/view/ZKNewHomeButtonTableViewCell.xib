@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ZKNewHomeButtonTableViewCellID" rowHeight="179" id="KGk-i7-Jjw" customClass="ZKNewHomeButtonTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="500" height="149"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newHomeButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="oIX-1I-QyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="149"/>
+                    </imageView>
+                    <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALc-t8-Wwb">
+                        <rect key="frame" x="0.0" y="0.0" width="167" height="75"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                        <state key="normal" title="康养指南" image="newHmeButton_0.png">
+                            <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="newHomeButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WjZ-KO-2uk"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeR-Fj-NUC">
+                        <rect key="frame" x="333" y="75" width="167" height="74"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                        <state key="normal" title="旅游季节" image="newHmeButton_5.png">
+                            <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="newHomeButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tSE-Ww-TeH"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZQ-V3-mXk">
+                        <rect key="frame" x="167" y="75" width="166" height="74"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                        <state key="normal" title="行程参考" image="newHmeButton_4.png">
+                            <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="newHomeButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ax5-MM-a2W"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChC-Ud-vX8">
+                        <rect key="frame" x="167" y="0.0" width="166" height="75"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                        <state key="normal" title="自驾游" image="newHmeButton_1.png">
+                            <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="newHomeButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Sb8-J6-08d"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LV3-kJ-GHY">
+                        <rect key="frame" x="333" y="0.0" width="167" height="75"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                        <state key="normal" title="720全景" image="newHmeButton_2.png">
+                            <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="newHomeButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="D7k-j0-fWk"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HKW-W8-GF6">
+                        <rect key="frame" x="0.0" y="74" width="500" height="1"/>
+                        <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="1dG-ph-nw2"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UiP-vR-dSD">
+                        <rect key="frame" x="166" y="0.0" width="1" height="149"/>
+                        <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="qXG-YX-zyw"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTi-bc-JiM">
+                        <rect key="frame" x="333" y="0.0" width="1" height="149"/>
+                        <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="yZX-Dw-iNd"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZx-ha-ubs">
+                        <rect key="frame" x="0.0" y="75" width="167" height="74"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                        <state key="normal" title="找旅行社" image="newHmeButton_3.png">
+                            <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="newHomeButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KdN-dS-lE2"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yZx-ha-ubs" firstAttribute="top" secondItem="ALc-t8-Wwb" secondAttribute="bottom" id="1fn-GR-K8N"/>
+                    <constraint firstItem="HKW-W8-GF6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4eN-MV-qrr"/>
+                    <constraint firstAttribute="bottom" secondItem="YTi-bc-JiM" secondAttribute="bottom" id="5qB-8o-bKV"/>
+                    <constraint firstItem="MZQ-V3-mXk" firstAttribute="top" secondItem="ChC-Ud-vX8" secondAttribute="bottom" id="7kG-4z-LSS"/>
+                    <constraint firstItem="IeR-Fj-NUC" firstAttribute="top" secondItem="LV3-kJ-GHY" secondAttribute="bottom" id="BEE-ME-jli"/>
+                    <constraint firstAttribute="bottom" secondItem="oIX-1I-QyQ" secondAttribute="bottom" id="BeS-Mt-Fwe"/>
+                    <constraint firstItem="oIX-1I-QyQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Bxi-Ko-SUf"/>
+                    <constraint firstItem="yZx-ha-ubs" firstAttribute="width" secondItem="MZQ-V3-mXk" secondAttribute="width" id="Dfr-SS-zOp"/>
+                    <constraint firstItem="LV3-kJ-GHY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="EEw-oe-eFx"/>
+                    <constraint firstItem="ALc-t8-Wwb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EWB-5t-D9h"/>
+                    <constraint firstAttribute="bottom" secondItem="UiP-vR-dSD" secondAttribute="bottom" id="HZX-gv-vjt"/>
+                    <constraint firstItem="IeR-Fj-NUC" firstAttribute="leading" secondItem="MZQ-V3-mXk" secondAttribute="trailing" id="J8J-v2-9Vd"/>
+                    <constraint firstItem="IeR-Fj-NUC" firstAttribute="top" secondItem="LV3-kJ-GHY" secondAttribute="bottom" id="KhA-rv-ND5"/>
+                    <constraint firstItem="oIX-1I-QyQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="MIu-TX-9vM"/>
+                    <constraint firstItem="ALc-t8-Wwb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="MQm-Zk-Llq"/>
+                    <constraint firstItem="MZQ-V3-mXk" firstAttribute="leading" secondItem="yZx-ha-ubs" secondAttribute="trailing" id="P2n-SC-FUE"/>
+                    <constraint firstItem="YTi-bc-JiM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Q61-Uy-YQP"/>
+                    <constraint firstItem="UiP-vR-dSD" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="R5z-sd-vHs"/>
+                    <constraint firstItem="IeR-Fj-NUC" firstAttribute="leading" secondItem="MZQ-V3-mXk" secondAttribute="trailing" id="RAa-gR-M13"/>
+                    <constraint firstItem="UiP-vR-dSD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Tse-YP-qVe"/>
+                    <constraint firstItem="LV3-kJ-GHY" firstAttribute="leading" secondItem="ChC-Ud-vX8" secondAttribute="trailing" id="UBv-mX-stf"/>
+                    <constraint firstItem="HKW-W8-GF6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="UFw-v3-eWe"/>
+                    <constraint firstAttribute="bottom" secondItem="MZQ-V3-mXk" secondAttribute="bottom" id="UWH-HE-bkJ"/>
+                    <constraint firstItem="YTi-bc-JiM" firstAttribute="leading" secondItem="LV3-kJ-GHY" secondAttribute="leading" id="VtR-Nv-f9A"/>
+                    <constraint firstItem="yZx-ha-ubs" firstAttribute="width" secondItem="IeR-Fj-NUC" secondAttribute="width" id="ZOH-iu-Ube"/>
+                    <constraint firstItem="ChC-Ud-vX8" firstAttribute="leading" secondItem="ALc-t8-Wwb" secondAttribute="trailing" id="Zvm-Gw-vRQ"/>
+                    <constraint firstItem="ALc-t8-Wwb" firstAttribute="width" secondItem="ChC-Ud-vX8" secondAttribute="width" id="d3B-r0-IvZ"/>
+                    <constraint firstItem="yZx-ha-ubs" firstAttribute="top" secondItem="ALc-t8-Wwb" secondAttribute="bottom" id="evg-UG-h6M"/>
+                    <constraint firstAttribute="trailing" secondItem="IeR-Fj-NUC" secondAttribute="trailing" id="fWo-oR-pD8"/>
+                    <constraint firstAttribute="trailing" secondItem="LV3-kJ-GHY" secondAttribute="trailing" id="i90-mx-OBP"/>
+                    <constraint firstAttribute="bottom" secondItem="IeR-Fj-NUC" secondAttribute="bottom" id="iGV-rw-PzY"/>
+                    <constraint firstItem="ALc-t8-Wwb" firstAttribute="height" secondItem="ChC-Ud-vX8" secondAttribute="height" id="jVZ-tT-lw0"/>
+                    <constraint firstItem="MZQ-V3-mXk" firstAttribute="leading" secondItem="yZx-ha-ubs" secondAttribute="trailing" id="k0k-aK-NbY"/>
+                    <constraint firstItem="ChC-Ud-vX8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lex-75-dcm"/>
+                    <constraint firstAttribute="bottom" secondItem="yZx-ha-ubs" secondAttribute="bottom" id="pGg-fn-QRf"/>
+                    <constraint firstAttribute="trailing" secondItem="HKW-W8-GF6" secondAttribute="trailing" id="pYk-1s-4pH"/>
+                    <constraint firstItem="MZQ-V3-mXk" firstAttribute="top" secondItem="ChC-Ud-vX8" secondAttribute="bottom" id="qZd-by-e6C"/>
+                    <constraint firstItem="UiP-vR-dSD" firstAttribute="trailing" secondItem="ALc-t8-Wwb" secondAttribute="trailing" id="qZf-Xh-2yc"/>
+                    <constraint firstItem="HKW-W8-GF6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="rqv-Ae-ipg"/>
+                    <constraint firstItem="yZx-ha-ubs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="skc-9q-YQ3"/>
+                    <constraint firstItem="UiP-vR-dSD" firstAttribute="leading" secondItem="ALc-t8-Wwb" secondAttribute="leading" id="tDP-VI-Dsf"/>
+                    <constraint firstItem="LV3-kJ-GHY" firstAttribute="leading" secondItem="HKW-W8-GF6" secondAttribute="trailing" id="v6C-WH-lN5"/>
+                    <constraint firstItem="ALc-t8-Wwb" firstAttribute="height" secondItem="LV3-kJ-GHY" secondAttribute="height" id="vxg-HI-ZRb"/>
+                    <constraint firstAttribute="trailing" secondItem="oIX-1I-QyQ" secondAttribute="trailing" id="yDR-Rz-bdM"/>
+                    <constraint firstItem="ALc-t8-Wwb" firstAttribute="width" secondItem="LV3-kJ-GHY" secondAttribute="width" id="yvE-x4-IEo"/>
+                    <constraint firstItem="ALc-t8-Wwb" firstAttribute="height" secondItem="yZx-ha-ubs" secondAttribute="height" id="zzG-JR-Fe7"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="UFw-v3-eWe"/>
+                        <exclude reference="R5z-sd-vHs"/>
+                        <exclude reference="tDP-VI-Dsf"/>
+                        <exclude reference="v6C-WH-lN5"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="centerLin" destination="1dG-ph-nw2" id="9Lx-hM-WFf"/>
+                <outlet property="lefLin" destination="qXG-YX-zyw" id="kCy-4M-7oM"/>
+                <outlet property="ritLin" destination="yZX-Dw-iNd" id="fp5-bc-CFW"/>
+            </connections>
+            <point key="canvasLocation" x="199" y="311"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="newHmeButton_0.png" width="20" height="20"/>
+        <image name="newHmeButton_1.png" width="20" height="14"/>
+        <image name="newHmeButton_2.png" width="20" height="17"/>
+        <image name="newHmeButton_3.png" width="19" height="19"/>
+        <image name="newHmeButton_4.png" width="18" height="16"/>
+        <image name="newHmeButton_5.png" width="19" height="19"/>
+        <image name="newHomeButton.png" width="360" height="106"/>
+    </resources>
+</document>

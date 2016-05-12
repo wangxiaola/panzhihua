@@ -7,9 +7,43 @@
 //
 
 #import <UIKit/UIKit.h>
+/**
+ *  cell样式
+ */
+typedef NS_ENUM(NSInteger,homecellTyper) {
+    /**
+     *  优惠
+     */
+    homecellOne = 0,
+    /**
+     *  攻略
+     */
+    homecellTow,
+};
 
-extern NSString *const ZKNewHomeTableViewCellID;
+@class ZKNewHomeMode;
+
+static  NSString *homeIndentifierOne=@"homeCellOne";
+static  NSString *homeIndentifierTow=@"homeCellTwo";
+
+#define cellHeight 500/3
 
 @interface ZKNewHomeTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) UIView *pictureView;
+
+@property (nonatomic, strong)UIImageView *backImageView;
+
+@property (nonatomic, strong) UILabel *inforLabel;
+
+@property (nonatomic, strong) UIImageView *lefImageView;
+
+@property (nonatomic, strong) UILabel *stateLabel;
+
+
+
+- (void)initSuperViews:(homecellTyper)typer;
+
+- (void)setData:(ZKNewHomeMode*)list cellTyper:(homecellTyper)typer;
 
 @end

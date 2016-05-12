@@ -9,5 +9,10 @@
 #import "ZKNewHomeMode.h"
 
 @implementation ZKNewHomeMode
+MJCodingImplementation
++ (NSDictionary *)replacedKeyFromPropertyName
+{
+    return @{@"ID": @"id"};
+}
 
 @end
