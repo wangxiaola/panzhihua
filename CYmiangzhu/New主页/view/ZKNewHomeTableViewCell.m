@@ -7,7 +7,8 @@
 //
 
 #import "ZKNewHomeTableViewCell.h"
-#import "ZKNewHomeMode.h"
+#import "ZKInformationModel.h"
+#import "ZKStrategyModel.h"
 
 @implementation ZKNewHomeTableViewCell
 
@@ -31,6 +32,7 @@
         self.backImageView.layer.masksToBounds = YES;
         self.backImageView.clipsToBounds = YES;
         self.backImageView.layer.cornerRadius = 4;
+        self.backImageView.contentMode = UIViewContentModeScaleAspectFill;
         [self addSubview:self.backImageView];
         
        
@@ -51,7 +53,6 @@
         self.inforLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         self.inforLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
         self.inforLabel.textColor = [UIColor whiteColor];
-        self.inforLabel.textAlignment = NSTextAlignmentRight;
         self.inforLabel.layer.masksToBounds = YES;
         self.inforLabel.layer.cornerRadius = 10;
         self.inforLabel.font = [UIFont systemFontOfSize:14];
@@ -88,43 +89,40 @@
 }
 
 
-- (void)setData:(ZKNewHomeMode*)list cellTyper:(homecellTyper)typer;
+- (void)setDataOne:(ZKInformationModel *)dataOne
 {
-      self.backImageView.image = [UIImage imageNamed:@"season_1.jpg"];
+
+    [ZKUtil UIimageView:self.backImageView NSSting:[NSString stringWithFormat:@"%@%@", imageUrlPrefix, dataOne.cover]];
+    self.inforLabel.text = [NSString stringWithFormat:@"     %@",dataOne.title];
+}
+
+- (void)setDataTow:(ZKStrategyModel *)dataTow
+{
+
+    [ZKUtil UIimageView:self.backImageView NSSting:[NSString stringWithFormat:@"%@%@", imageUrlPrefix, dataTow.images]];
+    self.inforLabel.text = dataTow.title;
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd";
+    NSDate *addDate = [NSDate dateWithTimeIntervalSince1970:dataTow.addtime.doubleValue / 1000];
+    NSString * dataStr  = [fmt stringFromDate:addDate];
+    NSString * str = [NSString stringWithFormat:@"%@人查看",dataTow.views];
+    self.stateLabel.text = [NSString stringWithFormat:@"%@ | %@",dataStr,str];
+    [ZKUtil UIimageView:self.lefImageView NSSting:dataTow.photo];
     
-    if (typer == homecellOne)
-    {
-
-        NSString *str = @"哇卡卡，这不是我吗？";
-        
-        self.inforLabel.text = str;
-       
-    }
-    else
-    {
-        self.lefImageView.image  = [UIImage imageNamed:@"feilei_Image_12"];
-        self.inforLabel.text = @"攀枝花哈哈哈";
-        self.stateLabel.text = @"2015-01-02 12:11 ｜ 67人查看 ";
-        
-        
-    }
-
-    
-  }
-
+}
 
 - (void)layoutSubviews
 {
-
+    [super layoutSubviews];
+    
     if (self.cellType == homecellOne)
     {
         
         NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:14]};
-        CGSize size = [self.inforLabel.text boundingRectWithSize:CGSizeMake(kDeviceWidth-20, 20) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
+        CGSize size = [self.inforLabel.text boundingRectWithSize:CGSizeMake(kDeviceWidth-40, 20) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
         
         float labelWidth =size.width;
-        
-        self.inforLabel.frame = CGRectMake(-10, self.backImageView.frame.size.height-30,labelWidth+15,20);
+        self.inforLabel.frame = CGRectMake(-10, self.backImageView.frame.size.height-30,labelWidth+14,20);
 
     }
     else if(self.cellType == homecellTow)

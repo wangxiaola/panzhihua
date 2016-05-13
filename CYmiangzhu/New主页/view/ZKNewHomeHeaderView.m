@@ -42,15 +42,22 @@
     [self.imageArray addObject:[UIImage imageNamed:@"season_2.jpg"]];
     [self.imageArray addObject:[UIImage imageNamed:@"season_3.jpg"]];
     
+
     // 网络加载 --- 创建带标题的图片轮播器
-    cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.frame.size.width, 450/3) imagesGroup:self.imageArray];
-    cycleScrollView.backgroundColor =[UIColor whiteColor];
-    cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
+     cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.frame.size.width, 450/3) delegate:self placeholderImage:[UIImage imageNamed:@"errData"]];
     cycleScrollView.autoScrollTimeInterval = 5;
     cycleScrollView.delegate = self;
     cycleScrollView.pageControlDotSize =CGSizeMake(5, 5);
-    cycleScrollView.dotColor = [UIColor  whiteColor]; // 自定义分页控件小圆标颜色
+    cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
+    cycleScrollView.currentPageDotColor = [UIColor orangeColor]; // 自定义分页控件小圆标颜色
+    cycleScrollView.pageDotColor = [UIColor whiteColor];
     [self addSubview:cycleScrollView];
+    
+    //         --- 模拟加载延迟
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        cycleScrollView.localizationImageNamesGroup = self.imageArray;
+    });
+
     
     UIView *buttonView = [[UIView alloc]initWithFrame:CGRectMake(0,cycleScrollView.frame.size.height, kDeviceWidth, self.frame.size.height- cycleScrollView.frame.size.height)];
     [self addSubview:buttonView];

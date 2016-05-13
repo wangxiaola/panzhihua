@@ -32,7 +32,7 @@
 //#import "ZKcarrierViewController.h"
 //#import "ZKregisterViewController.h"
 #import "ZKLiveInPZHViewController.h"
-
+#import "ZKNavigationController.h"
 /**
  *  支付宝
  */
@@ -98,8 +98,12 @@
     [self configIFlySpeech];
     [self initSDK];
 
+    UITabBarItem *item = [UITabBarItem appearance];
+    [item setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor lightGrayColor]} forState:UIControlStateNormal];
+    [item setTitleTextAttributes:@{NSForegroundColorAttributeName :CYBColorGreen} forState:UIControlStateSelected];
+    
     ZKLiveInPZHViewController *kangyangVc =[[ZKLiveInPZHViewController alloc] init];
-    UINavigationController *nav =[[UINavigationController alloc] initWithRootViewController:kangyangVc];
+    ZKNavigationController *nav =[[ZKNavigationController alloc] initWithRootViewController:kangyangVc];
     nav.navigationBarHidden =YES;
     self.window.rootViewController = nav;
 

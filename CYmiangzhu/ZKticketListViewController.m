@@ -296,12 +296,13 @@
             
             
             // 网络加载 --- 创建带标题的图片轮播器
-            cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.view.frame.size.width, imageHeghit) imageURLsGroup:imgUrlArray];
+            cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, self.view.frame.size.width, imageHeghit) imageNamesGroup:imgUrlArray];
             cycleScrollView.backgroundColor =[UIColor whiteColor];
             cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
             cycleScrollView.autoScrollTimeInterval =5;
             cycleScrollView.pageControlDotSize =CGSizeMake(5, 5);
-            cycleScrollView.dotColor = [UIColor  whiteColor]; // 自定义分页控件小圆标颜色
+            cycleScrollView.pageDotColor = [UIColor  whiteColor]; // 自定义分页控件小圆标颜色
+            cycleScrollView.currentPageDotColor = [UIColor orangeColor];
             [headView addSubview:cycleScrollView];
             
             

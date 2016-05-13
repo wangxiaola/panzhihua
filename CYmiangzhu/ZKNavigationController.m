@@ -30,9 +30,11 @@
     UINavigationBar *bar = [UINavigationBar appearance];
     [bar setBarTintColor:[UIColor whiteColor]];
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
-    attrs[NSFontAttributeName] = [UIFont boldSystemFontOfSize:20];
+    attrs[NSForegroundColorAttributeName] = CYBColorGreen;
+    attrs[NSFontAttributeName] = [UIFont boldSystemFontOfSize:18];
     [bar setTitleTextAttributes:attrs];
+    
+    
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated

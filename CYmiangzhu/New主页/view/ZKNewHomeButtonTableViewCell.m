@@ -34,8 +34,8 @@ NSString *const ZKNewHomeButtonTableViewCellID = @"ZKNewHomeButtonTableViewCellI
     
     if (index == 0)
     {
-        
-        
+       [[BaiduMobStat defaultStat] logEvent:@"search_health_in_pzh" eventLabel:@"分类-康养在攀枝花"];
+        [[self.controller navigationController] pushViewController:[[NSClassFromString(@"ZKWellcomeViewController") alloc]init] animated:YES];
         
     }
     else if (index == 1)

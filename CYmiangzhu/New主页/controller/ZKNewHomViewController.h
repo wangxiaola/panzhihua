@@ -7,7 +7,9 @@
 //
 
 #import "ZKNewBaseViewController.h"
-
+/**
+ *  主页
+ */
 @interface ZKNewHomViewController : ZKNewBaseViewController
 
 @end

@@ -21,8 +21,8 @@ typedef NS_ENUM(NSInteger,homecellTyper) {
     homecellTow,
 };
 
-@class ZKNewHomeMode;
-
+@class ZKInformationModel;
+@class ZKStrategyModel;
 
 #define cellHeight 500/3
 
@@ -40,10 +40,10 @@ typedef NS_ENUM(NSInteger,homecellTyper) {
 
 @property (nonatomic) homecellTyper cellType;
 
+@property (nonatomic, strong) ZKInformationModel *dataOne;
+@property (nonatomic, strong) ZKStrategyModel *dataTow;
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier SuperViews:(homecellTyper)typer;
 
-
-- (void)setData:(ZKNewHomeMode*)list cellTyper:(homecellTyper)typer;
 
 @end

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ZKWellcomeJTTableViewCellID" rowHeight="207" id="KGk-i7-Jjw" customClass="ZKWellcomeJTTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="479" height="207"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="479" height="206"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="season_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jQc-HA-HhP">
+                        <rect key="frame" x="0.0" y="0.0" width="479" height="155"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="155" id="Efr-EY-zSJ"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kangyang_juxing.png" translatesAutoresizingMaskIntoConstraints="NO" id="7yj-PU-Vcz">
+                        <rect key="frame" x="409" y="20" width="70" height="30"/>
+                        <rect key="contentStretch" x="0.5" y="0.5" width="0.5" height="0.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="UOx-V7-Y55"/>
+                            <constraint firstAttribute="width" constant="70" id="gbH-F6-WTD"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7a-2b-h6l">
+                        <rect key="frame" x="409" y="20" width="70" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="DyR-6a-2JR"/>
+                            <constraint firstAttribute="height" constant="30" id="Mn9-l8-SSB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmv-1r-eN6">
+                        <rect key="frame" x="0.0" y="155" width="479" height="51"/>
+                        <subviews>
+                            <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCd-bM-5oB">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                <state key="normal" title="34" image="kangyang_sc.png">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xuG-Eo-Q7F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRI-GP-lVz">
+                                <rect key="frame" x="160" y="0.0" width="159" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                <state key="normal" title="34" image="kangyang_fx.png">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MlC-tt-wYe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pc4-r3-3iN">
+                                <rect key="frame" x="319" y="0.0" width="160" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                <state key="normal" title="34" image="kangyang_xx.png">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Wt9-io-6t0"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04M-m9-tLU">
+                                <rect key="frame" x="159" y="6" width="1" height="39"/>
+                                <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="0Zh-w2-Hx6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86K-nq-dnx">
+                                <rect key="frame" x="318" y="6" width="1" height="39"/>
+                                <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="urn-Qo-Lte"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WCd-bM-5oB" firstAttribute="width" secondItem="XRI-GP-lVz" secondAttribute="width" id="3Sp-SI-gEx"/>
+                            <constraint firstItem="pc4-r3-3iN" firstAttribute="leading" secondItem="XRI-GP-lVz" secondAttribute="trailing" id="4Vg-pf-pV1"/>
+                            <constraint firstItem="WCd-bM-5oB" firstAttribute="width" secondItem="pc4-r3-3iN" secondAttribute="width" id="8iZ-n4-Uqg"/>
+                            <constraint firstItem="XRI-GP-lVz" firstAttribute="top" secondItem="xmv-1r-eN6" secondAttribute="top" id="9M4-4t-d6B"/>
+                            <constraint firstItem="04M-m9-tLU" firstAttribute="trailing" secondItem="WCd-bM-5oB" secondAttribute="trailing" id="ETT-Iy-y7a"/>
+                            <constraint firstItem="04M-m9-tLU" firstAttribute="leading" secondItem="WCd-bM-5oB" secondAttribute="leading" id="Eec-J9-vnd"/>
+                            <constraint firstAttribute="bottom" secondItem="pc4-r3-3iN" secondAttribute="bottom" id="GgF-07-tuq"/>
+                            <constraint firstItem="86K-nq-dnx" firstAttribute="top" secondItem="xmv-1r-eN6" secondAttribute="top" constant="6" id="HXL-Nb-oAh"/>
+                            <constraint firstItem="86K-nq-dnx" firstAttribute="trailing" secondItem="XRI-GP-lVz" secondAttribute="trailing" id="Os9-3g-age"/>
+                            <constraint firstAttribute="trailing" secondItem="pc4-r3-3iN" secondAttribute="trailing" id="Sy4-0Y-3Ts"/>
+                            <constraint firstItem="WCd-bM-5oB" firstAttribute="leading" secondItem="xmv-1r-eN6" secondAttribute="leading" id="X7r-fm-L0w"/>
+                            <constraint firstItem="04M-m9-tLU" firstAttribute="top" secondItem="xmv-1r-eN6" secondAttribute="top" constant="6" id="cem-HY-ITR"/>
+                            <constraint firstItem="XRI-GP-lVz" firstAttribute="leading" secondItem="WCd-bM-5oB" secondAttribute="trailing" id="hHr-7o-QPX"/>
+                            <constraint firstItem="WCd-bM-5oB" firstAttribute="top" secondItem="xmv-1r-eN6" secondAttribute="top" id="hKD-xI-gxI"/>
+                            <constraint firstAttribute="bottom" secondItem="WCd-bM-5oB" secondAttribute="bottom" id="hgZ-Va-wWk"/>
+                            <constraint firstAttribute="bottom" secondItem="86K-nq-dnx" secondAttribute="bottom" constant="6" id="jpT-MO-HUm"/>
+                            <constraint firstAttribute="bottom" secondItem="XRI-GP-lVz" secondAttribute="bottom" id="oDN-UU-vKy"/>
+                            <constraint firstItem="pc4-r3-3iN" firstAttribute="top" secondItem="xmv-1r-eN6" secondAttribute="top" id="pV5-Qw-dyF"/>
+                            <constraint firstAttribute="bottom" secondItem="04M-m9-tLU" secondAttribute="bottom" constant="6" id="py4-SM-yyN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Eec-J9-vnd"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="xmv-1r-eN6" secondAttribute="bottom" id="4Hn-OO-mir"/>
+                    <constraint firstAttribute="trailing" secondItem="7yj-PU-Vcz" secondAttribute="trailing" id="9E8-jk-0sV"/>
+                    <constraint firstItem="E7a-2b-h6l" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="AwK-ym-S9j"/>
+                    <constraint firstAttribute="trailing" secondItem="jQc-HA-HhP" secondAttribute="trailing" id="Eh7-XE-4tg"/>
+                    <constraint firstAttribute="trailing" secondItem="xmv-1r-eN6" secondAttribute="trailing" id="FaK-GN-bi5"/>
+                    <constraint firstItem="7yj-PU-Vcz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="II5-he-rkr"/>
+                    <constraint firstItem="xmv-1r-eN6" firstAttribute="top" secondItem="jQc-HA-HhP" secondAttribute="bottom" id="RAb-wo-ulH"/>
+                    <constraint firstItem="xmv-1r-eN6" firstAttribute="top" secondItem="jQc-HA-HhP" secondAttribute="top" id="TXD-gI-M8G"/>
+                    <constraint firstItem="xmv-1r-eN6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="dLd-u2-KVL"/>
+                    <constraint firstAttribute="trailing" secondItem="E7a-2b-h6l" secondAttribute="trailing" id="lKc-1Y-pRo"/>
+                    <constraint firstItem="jQc-HA-HhP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="r1o-wE-O8k"/>
+                    <constraint firstItem="jQc-HA-HhP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="u5G-b5-0vD"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="TXD-gI-M8G"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="backImageView" destination="jQc-HA-HhP" id="EtK-Nd-WiO"/>
+                <outlet property="fxButton" destination="XRI-GP-lVz" id="PIW-zH-Cbq"/>
+                <outlet property="inforlabel" destination="E7a-2b-h6l" id="Q7W-5G-Y0t"/>
+                <outlet property="scButton" destination="WCd-bM-5oB" id="AIm-Ps-JIL"/>
+                <outlet property="xxButton" destination="pc4-r3-3iN" id="nCZ-Ue-r4m"/>
+            </connections>
+            <point key="canvasLocation" x="459.5" y="263.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="kangyang_fx.png" width="12" height="12"/>
+        <image name="kangyang_juxing.png" width="10" height="27"/>
+        <image name="kangyang_sc.png" width="15" height="16"/>
+        <image name="kangyang_xx.png" width="16" height="15"/>
+        <image name="season_1.jpg" width="360" height="640"/>
+    </resources>
+</document>

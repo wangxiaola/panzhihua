@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ZKWellcomeZNTableViewCellID" rowHeight="85" id="KGk-i7-Jjw" customClass="ZKWellcomeZNTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="398" height="85"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="398" height="84"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QQ_TL.png" translatesAutoresizingMaskIntoConstraints="NO" id="0gK-Ql-ZtB">
+                        <rect key="frame" x="10" y="10" width="80" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="Q4Z-7F-uHv"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="为了彻底解决性能问题，核心数据引擎C++打造，并不是建立在SQLite之上的ORM。如果对数据引擎实现想深入了解可以查看" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeY-sk-JKL">
+                        <rect key="frame" x="100" y="34" width="288" height="40"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="攀枝花的旅游资源" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUJ-qm-WJS">
+                        <rect key="frame" x="100" y="10" width="288" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="V1P-k5-cMb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="IeY-sk-JKL" secondAttribute="trailing" constant="10" id="1sF-ea-Hxb"/>
+                    <constraint firstItem="cUJ-qm-WJS" firstAttribute="top" secondItem="0gK-Ql-ZtB" secondAttribute="top" id="DzT-Mh-3zM"/>
+                    <constraint firstItem="IeY-sk-JKL" firstAttribute="leading" secondItem="0gK-Ql-ZtB" secondAttribute="trailing" constant="10" id="Hxk-lW-Jk7"/>
+                    <constraint firstAttribute="trailing" secondItem="cUJ-qm-WJS" secondAttribute="trailing" constant="10" id="IZP-uw-WMe"/>
+                    <constraint firstItem="cUJ-qm-WJS" firstAttribute="leading" secondItem="0gK-Ql-ZtB" secondAttribute="trailing" constant="10" id="Ifu-Ef-GmS"/>
+                    <constraint firstAttribute="bottom" secondItem="IeY-sk-JKL" secondAttribute="bottom" constant="10" id="Mxh-rH-6TM"/>
+                    <constraint firstItem="IeY-sk-JKL" firstAttribute="top" secondItem="cUJ-qm-WJS" secondAttribute="bottom" id="NuW-fH-QhT"/>
+                    <constraint firstItem="0gK-Ql-ZtB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="SiI-Fo-JcL"/>
+                    <constraint firstItem="0gK-Ql-ZtB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ZzT-2l-ZeU"/>
+                    <constraint firstAttribute="bottom" secondItem="0gK-Ql-ZtB" secondAttribute="bottom" constant="10" id="fTY-iv-JVM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="inforLabel" destination="IeY-sk-JKL" id="cW4-a9-Lqd"/>
+                <outlet property="nameLabel" destination="cUJ-qm-WJS" id="adb-HT-men"/>
+                <outlet property="photoImage" destination="0gK-Ql-ZtB" id="BY3-da-s4e"/>
+            </connections>
+            <point key="canvasLocation" x="262" y="269.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="QQ_TL.png" width="33" height="33"/>
+    </resources>
+</document>

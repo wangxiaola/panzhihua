@@ -11,7 +11,8 @@
 #import "ZKNewHomeHeaderView.h"
 #import "ZKNewHomeTableViewCell.h"
 #import "ZKNewHomeButtonTableViewCell.h"
-#import "ZKNewHomeMode.h"
+#import "ZKInformationModel.h"
+#import "ZKStrategyModel.h"
 #import "MJRefresh.h"
 
 static  NSString *homeIndentifierOne=@"homeCellOne";
@@ -23,17 +24,13 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
 @property (nonatomic, strong) ZKNewHomeHeaderView *headerView;
 @property (nonatomic, strong) UITableView *homeTableView;
 @property (nonatomic, strong) UIButton *navigationView;
-@property (nonatomic, assign) int page;
-@property (nonatomic, weak) UIImageView *errDataView;
-/**
- *  标示
- */
-@property (nonatomic,strong)NSString *Identifier;
+@property (nonatomic, assign) NSInteger pag;
 /**
  *  数据
  */
 
-@property (nonatomic, strong) NSMutableArray<ZKNewHomeMode*> *homeListData;
+@property (nonatomic, strong) NSMutableArray<ZKInformationModel*> *homeListData;
+@property (nonatomic, strong) NSMutableArray<ZKStrategyModel *> *strategyModels;
 
 @end
 
@@ -53,9 +50,18 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
     
 }
 
-- (NSMutableArray<ZKNewHomeMode *> *)homeListData
+- (NSMutableArray<ZKStrategyModel *> *)strategyModels
 {
+    if (_strategyModels== nil) {
+        _strategyModels = [NSMutableArray array];
+    }
+    return _strategyModels;
+}
 
+
+- (NSMutableArray<ZKInformationModel *> *)homeListData
+{
+    
     if (!_homeListData) {
         
         _homeListData = [NSMutableArray arrayWithCapacity:0];
@@ -74,16 +80,14 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
         //设置分割线左边无边距，默认是15
         _homeTableView.separatorInset = UIEdgeInsetsZero;
         
-        _homeTableView.estimatedRowHeight=200; //预估行高 可以提高性能
+        _homeTableView.estimatedRowHeight = cellHeight; //预估行高 可以提高性能
         _homeTableView.delegate =self;
         _homeTableView.dataSource = self;
         _homeTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         
+        _homeTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(contenPost)];
         
         [_homeTableView registerNib:[UINib nibWithNibName:@"ZKNewHomeButtonTableViewCell" bundle:nil] forCellReuseIdentifier:ZKNewHomeButtonTableViewCellID];
-        
-        _homeTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-        _homeTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
         
     }
     
@@ -104,21 +108,6 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
     
 }
 
-- (UIImageView *)errDataView
-{
-    
-    if (_errDataView == nil) {
-        UIImageView *emptyDataView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"errData"]];
-        emptyDataView.center = CGPointMake(self.view.center.x, self.view.center.y +32);
-        emptyDataView.userInteractionEnabled =YES;
-        [self.view addSubview:emptyDataView];
-        self.errDataView = emptyDataView;
-        UITapGestureRecognizer *tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loadNewData)];
-        [emptyDataView addGestureRecognizer:tapGr];
-        
-    }
-    return _errDataView;
-}
 
 
 
@@ -127,7 +116,6 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
     [self.navigationController.navigationBar setBarTintColor:CYBColorGreen];
     self.navigationController.navigationBarHidden = NO;
 }
-
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
@@ -137,14 +125,12 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.Identifier = @"ZKNewHomViewController";
     [self initView];
     
 }
 
 - (void)initView
 {
-    
     
     
     self.navigationView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 0)];
@@ -158,120 +144,90 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
     [self.view addSubview:self.homeTableView];
     self.homeTableView.tableHeaderView = self.headerView;
     
-    [self.homeListData addObject:[ZKNewHomeMode new]];
-    
-    
-//    [self LoadTheCached];
+    [self loadNewOne];
+    [self loadNewTow];
     
 }
 #pragma mark 数据请求
+
+- (void)contenPost
+{
+    self.pag = 0;
+    [SVProgressHUD showWithStatus:@"加载中..."];
+    [self loadNewOne];
+    [self loadNewTow];
+}
 /****  请求方式  ******/
-- (void)loadNewData
-{
-    self.page = 1;
-    if (_errDataView) {
-        [_errDataView removeFromSuperview];
-        _errDataView = nil;
-    }
-    [self postData];
-}
-
-
-- (void)loadMoreData
-{
-    self.page++;
-    [self postData];
-}
-
-
--(NSMutableDictionary*)dataList:(NSInteger)index data:(NSMutableDictionary*)list;
-
+- (void)loadNewOne
 {
     
-    [list setObject:[NSNumber numberWithInteger:index] forKey:@"page"];
-    [list setObject:@"15" forKey:@"rows"];
-    [list setObject:@"line" forKey:@"method"];
-    NSLog( @"参数  ＝  %@\n",list);
-    return list;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"method"] = @"articleList";
+    params[@"rows"] = @"2";
+    params[@"page"] = @1;
     
-}
-
--(void)postData;
-{
-    NSMutableDictionary *pic = [NSMutableDictionary dictionary];
-    [ZKHttp Post:@"" params:[self  dataList:self.page data:pic] success:^(id responseObj) {
+    [ZKHttp Post:@"" params:params success:^(id responseObj) {
         
-        NSLog(@" \n post = %@ \n ",responseObj);
+        [self dismms];
         
-        NSMutableArray<ZKNewHomeMode *> *dataArray = [ZKNewHomeMode objectArrayWithKeyValuesArray:responseObj[@"rows"]];
-        
-        
-        [self dealWithDataArray:dataArray];
-        [self endRefreshAccordingTotalCount:[responseObj[@"total"] intValue]];
-        
-        if (dataArray.count == 0 && self.page > 1) {
-            self.page--;
-        }
-        
+        self.homeListData = [ZKInformationModel objectArrayWithKeyValuesArray:responseObj[@"rows"]];
         [self.homeTableView reloadData];
         
-        //根据数据个数判断是否要显示提示没有数据的图片
-        self.errDataView.hidden = self.homeListData.count > 0;
+        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:1];
+        [self.homeTableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationFade];
+        
         
     } failure:^(NSError *error) {
         
-        [self endRefreshAccordingTotalCount:-1];
-        //当前页码减1，当请求第一页的数据时，保持页码为1不变，跳过if语句
-        if (self.page > 1) {
-            self.page--;
-        }
-        //提示
-        [SVProgressHUD showErrorWithStatus:@"网络连接错误！"];
-        //根据数据个数判断是否要显示提示没有数据的图片
-        self.errDataView.hidden = self.homeListData.count > 0;
+      [self errdismms];
+    }];
+    
+    
+}
+
+
+- (void)loadNewTow
+{
+    
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"method"] = @"strategylist";
+    params[@"rows"] = @"2";
+    params[@"page"] = @1;
+    [ZKHttp Post:@"" params:params success:^(id responseObj) {
+        [self dismms];
+        self.strategyModels = [ZKStrategyModel objectArrayWithKeyValuesArray:responseObj[@"rows"]];
+        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
+        [self.homeTableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationFade];
+        
+        
+    } failure:^(NSError *error) {
+        
+        [self errdismms];
         
     }];
     
-}
-
-//去缓存
-- (void)LoadTheCached
-{
-    self.page = 1;
-    NSMutableArray *cacheModels = [NSKeyedUnarchiver unarchiveObjectWithFile:[kDocumentPath stringByAppendingPathComponent:self.Identifier]];
-    if (cacheModels == nil || cacheModels.count == 0) {
-        [self.homeTableView.mj_header beginRefreshing];
-    }else {
-        self.homeListData = cacheModels;
-        [self.homeTableView reloadData];
-    }
-}
-
-- (void)endRefreshAccordingTotalCount:(int)totalCount
-{
-    if (self.page == 1) {
-        [self.homeTableView.mj_header endRefreshing];
-        [self.homeTableView.mj_footer resetNoMoreData];
-    }else {
-        
-        if (totalCount != -1 && self.homeListData.count == totalCount) {
-            [self.homeTableView.mj_footer endRefreshingWithNoMoreData];
-        }else {
-            [self.homeTableView.mj_footer endRefreshing];
-        }
-    }
-}
-
-- (void)dealWithDataArray:(NSMutableArray *)dataArray
-{
-    //第一页的时候覆盖并缓存数据，其他页的时候累加数据
-    if (self.page == 1) {
-        self.homeListData = dataArray;
-        [NSKeyedArchiver archiveRootObject:dataArray toFile:[kDocumentPath stringByAppendingPathComponent:self.Identifier]];
-    }else {
-        [self.homeListData addObjectsFromArray:dataArray];
-    }
     
+}
+- (void)errdismms
+{
+    if (self.pag >0) {
+        self.pag = 0;
+        [SVProgressHUD dismissWithError:@"网络错误"];
+        [self.homeTableView.mj_header endRefreshing];
+    }
+
+}
+- (void)dismms
+{
+
+    self.pag ++;
+    if (self.pag == 2) {
+        self.pag = 0;
+        [SVProgressHUD dismissWithSuccess:@"加载完毕"];
+        [self.homeTableView.mj_header endRefreshing];
+    }
+
     
 }
 
@@ -291,8 +247,8 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
         
     }else
     {
-  
-
+        
+        
         if (indexPath.section == 1) {
             
             
@@ -303,8 +259,6 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
                 cell = [[ZKNewHomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:homeIndentifierOne SuperViews:homecellOne];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
-            
-            [cell setData:nil cellTyper:homecellOne];
             
             return cell;
         }else{
@@ -317,13 +271,36 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
             
-            [cell setData:nil cellTyper:homecellTow];
             
             return cell;
         }
-   
+        
     }
     
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (indexPath.section == 1)
+    {
+        
+        ZKInformationModel *model = self.homeListData[indexPath.row];
+        
+        NSString *str = [NSString stringWithFormat:@"desc_news.aspx?z_isheadback=true&id=%@&z_pagetitle=%@", model.ID, model.title];
+        [self jumpToWebUrl:webUrl(str)];
+        
+    }
+    else if (indexPath.section == 2)
+    {
+        
+        ZKStrategyModel *model = self.strategyModels[indexPath.row];
+        
+        NSString *str = [NSString stringWithFormat:@"desc_youji.aspx?z_isheadback=true&id=%@&z_pagetitle=%@", model.ID, model.title];
+        [self jumpToWebUrl:webUrl(str)];
+        
+    }
     
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -335,45 +312,72 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return section == 0 ?1:2;
+    if (section == 0)
+    {
+        
+        return 1;
+    }
+    else if (section == 1)
+    {
+        
+        return self.homeListData.count;
+    }
+    else if (section == 2)
+    {
+        
+        return self.strategyModels.count;
+    }
+    else{
+        
+        return 0;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-//    if (indexPath.section  == 1) {
-//        
-//        ZKNewHomeTableViewCell *homeCell =(ZKNewHomeTableViewCell*)cell;
-//        
-//        [homeCell setData:nil cellTyper:homecellOne];
-//        
-//    }else if (indexPath.section == 2)
-//    {
-//    
-//        ZKNewHomeTableViewCell *homeCell =(ZKNewHomeTableViewCell*)cell;
-//        
-//        [homeCell setData:nil cellTyper:homecellTow];
-//        
-//    }
-
+    
+    if (indexPath.section  == 1)
+    {
+        
+        ZKNewHomeTableViewCell *homeCell =(ZKNewHomeTableViewCell*)cell;
+        
+        homeCell.dataOne = self.homeListData[indexPath.row];
+        
+    }
+    else if (indexPath.section == 2)
+    {
+        
+        ZKNewHomeTableViewCell *homeCell =(ZKNewHomeTableViewCell*)cell;
+        
+        homeCell.dataTow = self.strategyModels[indexPath.row];
+        
+        
+    }
+    
     
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 8;
-
+    
 }
 
-- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-
-    return [UIView new];
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return indexPath.section == 0 ?100:cellHeight;
+    if (indexPath.section == 0)
+    {
+        
+        return 100;
+    }
+    else
+    {
+        
+        return cellHeight;
+    }
+    
     
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -388,11 +392,11 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
     if (section == 0)
     {
         
-     return [UIView new];
+        return nil;
         
     }else
     {
-    
+        
         static NSString *headerSectionID = @"HeaderFooterView";
         UITableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerSectionID];
         
@@ -401,7 +405,7 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
         
         if (headerView == nil)
         {
- 
+            
             headerView = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:headerSectionID];
             
             UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 36)];
@@ -457,13 +461,14 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
                 make.width.offset(70);
                 make.centerY.mas_equalTo(headerView.mas_centerY);
             }];
-           
+            
             
             
         }
         
-        NSString *str = section == 1 ? @"优惠资讯":@"旅游攻略";
-        NSString *imagePath = section == 1 ? @"homeYHZX":@"homeLV";
+        
+        NSString *str = section == 2 ? @"优惠资讯":@"旅游攻略";
+        NSString *imagePath = section == 2 ? @"homeYHZX":@"homeLV";
         lefImageView.image = [UIImage imageNamed:imagePath];
         lefLabel.text = str;
         
@@ -485,8 +490,36 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
 
 - (void)headerButton:(UIButton*)sender
 {
-
+    if (sender.tag == 1)
+    {
+        
+        /*** 旅游攻略 ***/
+        [[BaiduMobStat defaultStat] logEvent:@"home_go_strategy" eventLabel:@"首页-攻略 "];
+        self.navigationController.navigationBarHidden = YES;
+        [self.navigationController pushViewController:[[NSClassFromString(@"ZKStrategyViewController") alloc]init] animated:YES];
+        
+        
+    }
+    else
+    {
+        /*** 旅游资讯 ***/
+        [self.navigationController pushViewController:[[NSClassFromString(@"ZKInformationViewController") alloc]init] animated:YES];
+        self.navigationController.navigationBarHidden = YES;
+        [[BaiduMobStat defaultStat] logEvent:@"home_go_news" eventLabel:@"首页-资讯"];
+        
+        
+    }
 }
+
+- (void)jumpToWebUrl:(NSString *)webUrl
+{
+    ZKBasicViewController *web = [[ZKBasicViewController alloc] init];
+    web.webToUrl = [webUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    web.hidesBottomBarWhenPushed = YES;
+    self.navigationController.navigationBarHidden = YES;
+    [self.navigationController pushViewController:web animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

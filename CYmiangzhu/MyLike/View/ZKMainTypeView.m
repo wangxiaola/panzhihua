@@ -8,7 +8,6 @@
 
 #import "ZKMainTypeView.h"
 
-#define selectFont [UIFont boldSystemFontOfSize:12]
 #define normalFont [UIFont systemFontOfSize:12]
 
 @implementation ZKMainTypeView
@@ -26,7 +25,7 @@
         array =filters;
         self.backgroundColor = [UIColor whiteColor];
         itemCount = filters.count;
-        selectView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height-3, self.frame.size.width/itemCount, 3)];
+        selectView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height-2, self.frame.size.width/itemCount, 2)];
         selectView.backgroundColor =CYBColorGreen;
          [self addSubview:selectView];
         float jiange =frame.size.width/filters.count;
@@ -45,7 +44,7 @@
             
             if (i == 0) {
                 button.selected = YES;
-                button.titleLabel.font = selectFont;
+                button.titleLabel.font = normalFont;
             }else{
                 button.titleLabel.font = normalFont;
             }
@@ -65,7 +64,7 @@
         }
     }
     b.selected = YES;
-    b.titleLabel.font = selectFont;
+    b.titleLabel.font = normalFont;
 }
 
 -(void)selectTypeButtonClick:(UIButton *)b{
