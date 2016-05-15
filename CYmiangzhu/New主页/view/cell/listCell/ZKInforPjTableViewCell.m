@@ -24,7 +24,6 @@ NSString *const ZKInforPjCellID = @"ZKInforPjCellID";
      UICollectionViewScrollDirectionVertical];//设置其布局方向
     flowLayout.minimumInteritemSpacing = 0;
     flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);//设置其边界
-    //其布局很有意思，当你的cell设置大小后，一行多少个cell，由cell的宽度决定
     self.collectionView.collectionViewLayout = flowLayout;
 
     self.collectionView.dataSource = self;
