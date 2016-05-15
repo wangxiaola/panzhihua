@@ -22,7 +22,7 @@
 {
     
     if (_errDataView == nil) {
-        UIImageView *emptyDataView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"2D_enterpriseHead"]];
+        UIImageView *emptyDataView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"errData"]];
         CGSize t = emptyDataView.frame.size;
         emptyDataView.frame =CGRectMake((self.frame.size.width-t.width)/2, (self.frame.size.height-t.height)/2, t.width, t.height);
         emptyDataView.userInteractionEnabled =YES;
@@ -178,7 +178,6 @@
     NSMutableArray *cacheModels = [NSKeyedUnarchiver unarchiveObjectWithFile:[kDocumentPath stringByAppendingPathComponent:self.Identifier]];
     if (cacheModels == nil || cacheModels.count == 0) {
         
-        [self.tableView.mj_header beginRefreshing];
         [self endRefreshAccordingTotalCount:-1];
         self.page =1;
         //提示

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ZKLocationCallCellID" rowHeight="64" id="KGk-i7-Jjw" customClass="ZKLocationCallTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="407" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="407" height="63.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dea-Ok-UBZ">
+                        <rect key="frame" x="0.0" y="0.0" width="35" height="63.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="WpF-it-ck5"/>
+                        </constraints>
+                        <state key="normal" image="detail_dingwei.png"/>
+                        <connections>
+                            <action selector="adderButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1bS-8i-1Ws"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="胖子是啥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsF-El-z8v">
+                        <rect key="frame" x="40" y="8" width="303" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="pBN-I9-8ii"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DE-CB-ZDd">
+                        <rect key="frame" x="349" y="8" width="50" height="47.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="qyn-IV-Ua5"/>
+                        </constraints>
+                        <state key="normal" image="detail_call.png"/>
+                        <connections>
+                            <action selector="callButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="96B-Qd-toy"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ah3-G5-bF4">
+                        <rect key="frame" x="348" y="8" width="1" height="47.5"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="fjd-1G-4jP"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距您545.0Km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOq-s4-A67">
+                        <rect key="frame" x="40" y="29" width="303" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="14x-FJ-466"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ah3-G5-bF4" firstAttribute="leading" secondItem="rsF-El-z8v" secondAttribute="trailing" constant="5" id="2QW-sS-xbP"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ah3-G5-bF4" secondAttribute="bottom" id="2YH-rk-ku8"/>
+                    <constraint firstItem="rsF-El-z8v" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="7VG-bG-t3J"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1DE-CB-ZDd" secondAttribute="trailing" id="8Jl-ku-SYa"/>
+                    <constraint firstItem="ah3-G5-bF4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="GPZ-nu-nQt"/>
+                    <constraint firstItem="ah3-G5-bF4" firstAttribute="leading" secondItem="bOq-s4-A67" secondAttribute="trailing" constant="5" id="OuT-0Y-W8x"/>
+                    <constraint firstItem="Dea-Ok-UBZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="S23-5p-qTT"/>
+                    <constraint firstItem="rsF-El-z8v" firstAttribute="leading" secondItem="Dea-Ok-UBZ" secondAttribute="trailing" constant="5" id="UWw-HF-u3R"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="1DE-CB-ZDd" secondAttribute="bottom" id="Uqw-ft-F3U"/>
+                    <constraint firstItem="1DE-CB-ZDd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="XiT-BY-3aL"/>
+                    <constraint firstItem="Dea-Ok-UBZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="eNX-si-OL8"/>
+                    <constraint firstAttribute="bottom" secondItem="Dea-Ok-UBZ" secondAttribute="bottom" id="lZU-Bp-bjM"/>
+                    <constraint firstItem="bOq-s4-A67" firstAttribute="top" secondItem="rsF-El-z8v" secondAttribute="bottom" id="mbR-sA-FdP"/>
+                    <constraint firstItem="bOq-s4-A67" firstAttribute="leading" secondItem="Dea-Ok-UBZ" secondAttribute="trailing" constant="5" id="qnp-dN-qj9"/>
+                    <constraint firstItem="1DE-CB-ZDd" firstAttribute="leading" secondItem="ah3-G5-bF4" secondAttribute="trailing" id="y0L-XF-K6x"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="adderLabel" destination="bOq-s4-A67" id="4JD-D6-wI7"/>
+                <outlet property="nameLabel" destination="rsF-El-z8v" id="dQ1-1y-OfQ"/>
+            </connections>
+            <point key="canvasLocation" x="416.5" y="351"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="detail_call.png" width="20" height="20"/>
+        <image name="detail_dingwei.png" width="20" height="26"/>
+    </resources>
+</document>

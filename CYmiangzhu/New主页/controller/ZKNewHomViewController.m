@@ -73,7 +73,7 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
     
     if (!_homeTableView) {
         
-        _homeTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, self.view.frame.size.height) style:UITableViewStylePlain];
+        _homeTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         _homeTableView.backgroundColor = YJCorl(249, 249, 249);
         //去掉plain样式下多余的分割线
         _homeTableView.tableFooterView = [[UIView alloc] init];

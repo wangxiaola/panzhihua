@@ -60,129 +60,139 @@
 #pragma mark - Initializations
 
 - (id)init {
-  self = [super initWithFrame:CGRectZero];
-  if (self) {
-    [self setupDefaults];
-  }
-  return self;
+    self = [super initWithFrame:CGRectZero];
+    if (self) {
+        [self setupDefaults];
+    }
+    return self;
 }
 
 - (id)initWithFrame:(CGRect)frame {
-  self = [super initWithFrame:frame];
-  if (self) {
-    [self setupDefaults];
-  }
-  return self;
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setupDefaults];
+    }
+    return self;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-  self = [super initWithCoder:aDecoder];
-  if (self) {
-    [self setupDefaults];
-  }
-  return self;
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setupDefaults];
+    }
+    return self;
 }
 
 #pragma mark -
 #pragma mark - Private Methods
 
 - (void)setupDefaults {
-  self.translatesAutoresizingMaskIntoConstraints = NO;
-  self.numberOfCircles = 5;
-  self.internalSpacing = 5;
-  self.radius = 10;
-  self.delay = 0.2;
-  self.duration = 0.8;
-  self.defaultColor = [UIColor lightGrayColor];
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    self.numberOfCircles = 5;
+    self.internalSpacing = 5;
+    self.radius = 10;
+    self.delay = 0.2;
+    self.duration = 0.8;
+    self.defaultColor = [UIColor lightGrayColor];
 }
 
 - (UIView *)createCircleWithRadius:(CGFloat)radius
-                          color:(UIColor *)color
-                      positionX:(CGFloat)x {
-  UIView *circle = [[UIView alloc] initWithFrame:CGRectMake(x, 0, radius * 2, radius * 2)];
-  circle.backgroundColor = color;
-  circle.layer.cornerRadius = radius;
-  circle.translatesAutoresizingMaskIntoConstraints = NO;
-  return circle;
+                             color:(UIColor *)color
+                         positionX:(CGFloat)x {
+    UIView *circle = [[UIView alloc] initWithFrame:CGRectMake(x, 0, radius * 2, radius * 2)];
+    circle.backgroundColor = color;
+    circle.layer.cornerRadius = radius;
+    circle.translatesAutoresizingMaskIntoConstraints = NO;
+    return circle;
 }
 
 - (CABasicAnimation *)createAnimationWithDuration:(CGFloat)duration delay:(CGFloat)delay {
-  CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-  anim.delegate = self;
-  anim.fromValue = [NSNumber numberWithFloat:0.0f];
-  anim.toValue = [NSNumber numberWithFloat:1.0f];
-  anim.autoreverses = YES;
-  anim.duration = duration;
-  anim.removedOnCompletion = NO;
-  anim.beginTime = CACurrentMediaTime()+delay;
-  anim.repeatCount = INFINITY;
-  anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-  return anim;
+    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    anim.delegate = self;
+    anim.fromValue = [NSNumber numberWithFloat:0.0f];
+    anim.toValue = [NSNumber numberWithFloat:1.0f];
+    anim.autoreverses = YES;
+    anim.duration = duration;
+    anim.removedOnCompletion = NO;
+    anim.beginTime = CACurrentMediaTime()+delay;
+    anim.repeatCount = INFINITY;
+    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    return anim;
+}
+
+- (UIColor *)activityIndicatorView
+{
+    
+    CGFloat red   = (arc4random() % 256)/255.0;
+    CGFloat green = (arc4random() % 256)/255.0;
+    CGFloat blue  = (arc4random() % 256)/255.0;
+    CGFloat alpha = 1.0f;
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
 - (void)addCircles {
-  for (NSUInteger i = 0; i < self.numberOfCircles; i++) {
-    UIColor *color = nil;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(activityIndicatorView:circleBackgroundColorAtIndex:)]) {
-      color = [self.delegate activityIndicatorView:self circleBackgroundColorAtIndex:i];
+    for (NSUInteger i = 0; i < self.numberOfCircles; i++) {
+        UIColor *color = nil;
+        
+        color = [self activityIndicatorView];
+        
+        UIView *circle = [self createCircleWithRadius:self.radius
+                                                color:(color == nil) ? self.defaultColor : color
+                                            positionX:(i * ((2 * self.radius) + self.internalSpacing))];
+        [circle setTransform:CGAffineTransformMakeScale(0, 0)];
+        [circle.layer addAnimation:[self createAnimationWithDuration:self.duration delay:(i * self.delay)] forKey:@"scale"];
+        [self addSubview:circle];
     }
-    UIView *circle = [self createCircleWithRadius:self.radius
-                                            color:(color == nil) ? self.defaultColor : color
-                                        positionX:(i * ((2 * self.radius) + self.internalSpacing))];
-    [circle setTransform:CGAffineTransformMakeScale(0, 0)];
-    [circle.layer addAnimation:[self createAnimationWithDuration:self.duration delay:(i * self.delay)] forKey:@"scale"];
-    [self addSubview:circle];
-  }
 }
 
 - (void)removeCircles {
-  [self.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-    [obj removeFromSuperview];
-  }];
+    [self.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj removeFromSuperview];
+    }];
 }
 
 - (void)adjustFrame {
-  CGRect frame = self.frame;
-  frame.size.width = (self.numberOfCircles * ((2 * self.radius) + self.internalSpacing)) - self.internalSpacing;
-  frame.size.height = self.radius * 2;
-  self.frame = frame;
+    CGRect frame = self.frame;
+    frame.size.width = (self.numberOfCircles * ((2 * self.radius) + self.internalSpacing)) - self.internalSpacing;
+    frame.size.height = self.radius * 2;
+    self.frame = frame;
 }
 
 #pragma mark -
 #pragma mark - Public Methods
 
 - (void)startAnimating {
-  if (!self.isAnimating) {
-    [self addCircles];
-    self.hidden = NO;
-    self.isAnimating = YES;
-  }
+    if (!self.isAnimating) {
+        [self addCircles];
+        self.hidden = NO;
+        self.isAnimating = YES;
+    }
 }
 
 - (void)stopAnimating {
-  if (self.isAnimating) {
-    [self removeCircles];
-    self.hidden = YES;
-    self.isAnimating = NO;
-  }
+    if (self.isAnimating) {
+        [self removeCircles];
+        self.hidden = YES;
+        self.isAnimating = NO;
+    }
 }
 
 #pragma mark -
 #pragma mark - Custom Setters and Getters
 
 - (void)setNumberOfCircles:(NSUInteger)numberOfCircles {
-  _numberOfCircles = numberOfCircles;
-  [self adjustFrame];
+    _numberOfCircles = numberOfCircles;
+    [self adjustFrame];
 }
 
 - (void)setRadius:(CGFloat)radius {
-  _radius = radius;
-  [self adjustFrame];
+    _radius = radius;
+    [self adjustFrame];
 }
 
 - (void)setInternalSpacing:(CGFloat)internalSpacing {
-  _internalSpacing = internalSpacing;
-  [self adjustFrame];
+    _internalSpacing = internalSpacing;
+    [self adjustFrame];
 }
 
 @end

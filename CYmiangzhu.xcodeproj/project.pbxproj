@@ -635,6 +635,16 @@
 		8BCBF91B1B4BCC6A00DFFA08 /* ZKHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCBF91A1B4BCC6A00DFFA08 /* ZKHttp.m */; };
 		8BEAC1821B4CCD6C00009B43 /* GSLocationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAC1801B4CCD6C00009B43 /* GSLocationTool.m */; };
 		8BEAC21F1B4D262400009B43 /* RWWHttpRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAC21E1B4D262400009B43 /* RWWHttpRequestTool.m */; };
+		A12C3EAE1CE82A82007B8492 /* ZKLocationCallTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A12C3EAC1CE82A82007B8492 /* ZKLocationCallTableViewCell.m */; };
+		A12C3EAF1CE82A82007B8492 /* ZKLocationCallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12C3EAD1CE82A82007B8492 /* ZKLocationCallTableViewCell.xib */; };
+		A12C3EB71CE85B3C007B8492 /* ZKPictureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A12C3EB51CE85B3C007B8492 /* ZKPictureTableViewCell.m */; };
+		A12C3EB81CE85B3C007B8492 /* ZKPictureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12C3EB61CE85B3C007B8492 /* ZKPictureTableViewCell.xib */; };
+		A12C3EBB1CE86304007B8492 /* ZKPjHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A12C3EBA1CE86304007B8492 /* ZKPjHeaderView.m */; };
+		A12C3EC31CE86B32007B8492 /* ZKpjTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A12C3EC21CE86B32007B8492 /* ZKpjTableViewCell.m */; };
+		A12C3EC71CE86FF3007B8492 /* ZKInforPjTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A12C3EC51CE86FF3007B8492 /* ZKInforPjTableViewCell.m */; };
+		A12C3EC81CE86FF3007B8492 /* ZKInforPjTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12C3EC61CE86FF3007B8492 /* ZKInforPjTableViewCell.xib */; };
+		A12C3ECC1CE89C02007B8492 /* ZKInforPjCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A12C3ECA1CE89C02007B8492 /* ZKInforPjCollectionViewCell.m */; };
+		A12C3ECD1CE89C02007B8492 /* ZKInforPjCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12C3ECB1CE89C02007B8492 /* ZKInforPjCollectionViewCell.xib */; };
 		A17005261C1882A300119402 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = A17004FC1C1882A300119402 /* MJRefreshAutoFooter.m */; };
 		A17005271C1882A300119402 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = A17004FE1C1882A300119402 /* MJRefreshBackFooter.m */; };
 		A17005281C1882A300119402 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A17005001C1882A300119402 /* MJRefreshComponent.m */; };
@@ -1776,6 +1786,22 @@
 		8BEAC1811B4CCD6C00009B43 /* GSLocationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSLocationTool.h; sourceTree = "<group>"; };
 		8BEAC21D1B4D262400009B43 /* RWWHttpRequestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWWHttpRequestTool.h; sourceTree = "<group>"; };
 		8BEAC21E1B4D262400009B43 /* RWWHttpRequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWWHttpRequestTool.m; sourceTree = "<group>"; };
+		A12C3EAB1CE82A82007B8492 /* ZKLocationCallTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKLocationCallTableViewCell.h; path = ../ZKLocationCallTableViewCell.h; sourceTree = "<group>"; };
+		A12C3EAC1CE82A82007B8492 /* ZKLocationCallTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKLocationCallTableViewCell.m; path = ../ZKLocationCallTableViewCell.m; sourceTree = "<group>"; };
+		A12C3EAD1CE82A82007B8492 /* ZKLocationCallTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZKLocationCallTableViewCell.xib; path = ../ZKLocationCallTableViewCell.xib; sourceTree = "<group>"; };
+		A12C3EB41CE85B3C007B8492 /* ZKPictureTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKPictureTableViewCell.h; sourceTree = "<group>"; };
+		A12C3EB51CE85B3C007B8492 /* ZKPictureTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKPictureTableViewCell.m; sourceTree = "<group>"; };
+		A12C3EB61CE85B3C007B8492 /* ZKPictureTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKPictureTableViewCell.xib; sourceTree = "<group>"; };
+		A12C3EB91CE86304007B8492 /* ZKPjHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKPjHeaderView.h; sourceTree = "<group>"; };
+		A12C3EBA1CE86304007B8492 /* ZKPjHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKPjHeaderView.m; sourceTree = "<group>"; };
+		A12C3EC11CE86B32007B8492 /* ZKpjTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKpjTableViewCell.h; sourceTree = "<group>"; };
+		A12C3EC21CE86B32007B8492 /* ZKpjTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKpjTableViewCell.m; sourceTree = "<group>"; };
+		A12C3EC41CE86FF3007B8492 /* ZKInforPjTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKInforPjTableViewCell.h; sourceTree = "<group>"; };
+		A12C3EC51CE86FF3007B8492 /* ZKInforPjTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKInforPjTableViewCell.m; sourceTree = "<group>"; };
+		A12C3EC61CE86FF3007B8492 /* ZKInforPjTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKInforPjTableViewCell.xib; sourceTree = "<group>"; };
+		A12C3EC91CE89C02007B8492 /* ZKInforPjCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKInforPjCollectionViewCell.h; sourceTree = "<group>"; };
+		A12C3ECA1CE89C02007B8492 /* ZKInforPjCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKInforPjCollectionViewCell.m; sourceTree = "<group>"; };
+		A12C3ECB1CE89C02007B8492 /* ZKInforPjCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKInforPjCollectionViewCell.xib; sourceTree = "<group>"; };
 		A17004FB1C1882A300119402 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		A17004FC1C1882A300119402 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		A17004FD1C1882A300119402 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -3687,6 +3713,7 @@
 		3B5F127F1CE3180F009814BE /* view */ = {
 			isa = PBXGroup;
 			children = (
+				A12C3EB01CE82A96007B8492 /* listCell */,
 				3BD15FFF1CE583280072B614 /* cell */,
 				3B5F12A81CE32DD9009814BE /* ZKNewHomeHeaderView.h */,
 				3B5F12A91CE32DD9009814BE /* ZKNewHomeHeaderView.m */,
@@ -3880,6 +3907,30 @@
 				8BEAC21E1B4D262400009B43 /* RWWHttpRequestTool.m */,
 			);
 			name = "请求解析";
+			sourceTree = "<group>";
+		};
+		A12C3EB01CE82A96007B8492 /* listCell */ = {
+			isa = PBXGroup;
+			children = (
+				A12C3EAB1CE82A82007B8492 /* ZKLocationCallTableViewCell.h */,
+				A12C3EAC1CE82A82007B8492 /* ZKLocationCallTableViewCell.m */,
+				A12C3EAD1CE82A82007B8492 /* ZKLocationCallTableViewCell.xib */,
+				A12C3EB41CE85B3C007B8492 /* ZKPictureTableViewCell.h */,
+				A12C3EB51CE85B3C007B8492 /* ZKPictureTableViewCell.m */,
+				A12C3EB61CE85B3C007B8492 /* ZKPictureTableViewCell.xib */,
+				A12C3EB91CE86304007B8492 /* ZKPjHeaderView.h */,
+				A12C3EBA1CE86304007B8492 /* ZKPjHeaderView.m */,
+				A12C3EC11CE86B32007B8492 /* ZKpjTableViewCell.h */,
+				A12C3EC21CE86B32007B8492 /* ZKpjTableViewCell.m */,
+				A12C3EC41CE86FF3007B8492 /* ZKInforPjTableViewCell.h */,
+				A12C3EC51CE86FF3007B8492 /* ZKInforPjTableViewCell.m */,
+				A12C3EC61CE86FF3007B8492 /* ZKInforPjTableViewCell.xib */,
+				A12C3EC91CE89C02007B8492 /* ZKInforPjCollectionViewCell.h */,
+				A12C3ECA1CE89C02007B8492 /* ZKInforPjCollectionViewCell.m */,
+				A12C3ECB1CE89C02007B8492 /* ZKInforPjCollectionViewCell.xib */,
+			);
+			name = listCell;
+			path = cell/listCell;
 			sourceTree = "<group>";
 		};
 		A17004F91C1882A300119402 /* MJRefresh */ = {
@@ -4397,6 +4448,7 @@
 				1282F5B91B7AEE2C00BC9C03 /* hom_button_7@3x.png in Resources */,
 				3BB887A71CE4502600CAF13F /* newHmeButton_0@2x.png in Resources */,
 				126DE42A1B79A2A100A61766 /* people@2x.png in Resources */,
+				A12C3EC81CE86FF3007B8492 /* ZKInforPjTableViewCell.xib in Resources */,
 				EA36B4151B9443EA00C56848 /* ZKSceneStatusManCell.xib in Resources */,
 				1282F5BD1B7AEE2C00BC9C03 /* hom_button_11@3x.png in Resources */,
 				1282F5C31B7AEE2C00BC9C03 /* hom_youshang@3x.png in Resources */,
@@ -4506,7 +4558,9 @@
 				1282F59B1B7AEE1000BC9C03 /* hom_youshang@2x.png in Resources */,
 				129F719A1BCF80B600A99DF5 /* sex_female@2x.png in Resources */,
 				1221083C1B7C9BE800319B55 /* feilei_Image_2@3x.png in Resources */,
+				A12C3EB81CE85B3C007B8492 /* ZKPictureTableViewCell.xib in Resources */,
 				3B004E601C0D6D81007B4F06 /* button_rightRadius_selected@3x.png in Resources */,
+				A12C3EAF1CE82A82007B8492 /* ZKLocationCallTableViewCell.xib in Resources */,
 				122108451B7C9BE800319B55 /* feilei_Image_11@3x.png in Resources */,
 				124B21CE1B4F93D000597AA1 /* rests@2x.png in Resources */,
 				EA3F158D1BC904830064B6F5 /* feilei_Image_15@3x.png in Resources */,
@@ -4674,6 +4728,7 @@
 				3BAE6BE31C438FB6004E1709 /* play.jpg in Resources */,
 				3B5A03D31C57498C00D9B7AA /* WeiboSDK.bundle in Resources */,
 				3B3C6AB71C17FA390056BDCF /* chooesDex@3x.png in Resources */,
+				A12C3ECD1CE89C02007B8492 /* ZKInforPjCollectionViewCell.xib in Resources */,
 				EA6A35B61C1E6F8100B237F1 /* item_msg@3x.png in Resources */,
 				1282F5CC1B7B2B4400BC9C03 /* recommen_backImage@3x.jpg in Resources */,
 				3B84A4C71CC0AF9000CAF041 /* police_call.png in Resources */,
@@ -4875,6 +4930,7 @@
 				127530E11B4E567900021FB3 /* MapView.m in Sources */,
 				EA6086F01C214C8D009F3F74 /* ZKStrategyCell.m in Sources */,
 				EA6086E91C214C26009F3F74 /* ZKStrategyViewController.m in Sources */,
+				A12C3EBB1CE86304007B8492 /* ZKPjHeaderView.m in Sources */,
 				EA5B1C6B1C27C67B00CF85E8 /* ZKFootprintCell.m in Sources */,
 				EA2E41191C1A959A0048AF54 /* ZKSceneryLikeTableViewController.m in Sources */,
 				3B615D831C43537B003F66DE /* ZKticketMOde.m in Sources */,
@@ -5025,6 +5081,7 @@
 				3B4AA08F1CABCC2800983831 /* WaterF.m in Sources */,
 				3B3350A11C4F6B57007F7832 /* ZKentertainmentViewController.m in Sources */,
 				3B99C59B1BF5BF24008788A9 /* ZKclassificationViewController.m in Sources */,
+				A12C3ECC1CE89C02007B8492 /* ZKInforPjCollectionViewCell.m in Sources */,
 				EA76A8DD1C23E2E000A51B61 /* ZKComplaintsViewController.m in Sources */,
 				3B1A86571C14346200E81C2D /* ZKCustomizationSureOrderViewController.m in Sources */,
 				12C81F631B15918000E61804 /* MBProgressHUD.m in Sources */,
@@ -5033,6 +5090,7 @@
 				122108091B7C8F6100319B55 /* ZKfeileiList.m in Sources */,
 				12C81FEA1B15B0CD00E61804 /* UIView+Snapshot.m in Sources */,
 				EA011AA91B95506700C8A497 /* ZKSceneStatusLayout.m in Sources */,
+				A12C3EB71CE85B3C007B8492 /* ZKPictureTableViewCell.m in Sources */,
 				3B5F12A11CE32D22009814BE /* MASViewAttribute.m in Sources */,
 				3B615D931C4383C6003F66DE /* ZKVoiceView.m in Sources */,
 				3B5F12AD1CE332AF009814BE /* ZKNewHomeTableViewCell.m in Sources */,
@@ -5042,7 +5100,9 @@
 				12BF1A561B42423F000E526B /* ZKSingleton.m in Sources */,
 				3B5F12A41CE32D22009814BE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				EA94B6451BAA4E920064C04C /* NSString+URLEncode.m in Sources */,
+				A12C3EAE1CE82A82007B8492 /* ZKLocationCallTableViewCell.m in Sources */,
 				12C81F6A1B15918000E61804 /* MJPhotoToolbar.m in Sources */,
+				A12C3EC71CE86FF3007B8492 /* ZKInforPjTableViewCell.m in Sources */,
 				8BEAC21F1B4D262400009B43 /* RWWHttpRequestTool.m in Sources */,
 				3B1A86531C14346200E81C2D /* ZKBaseTableViewController.m in Sources */,
 				3B5F12751CE31764009814BE /* ZKNavigationController.m in Sources */,
@@ -5117,6 +5177,7 @@
 				EAC0501D1BCB43070007FDCB /* ZKguideInforView.m in Sources */,
 				3B4E89E21CA91E3D00A39037 /* ZKGlobalSearchMode.m in Sources */,
 				3B1A86561C14346200E81C2D /* ZKCustomizationCommitOrderViewController.m in Sources */,
+				A12C3EC31CE86B32007B8492 /* ZKpjTableViewCell.m in Sources */,
 				EA13AC271B8DA60C00E2686B /* MJProperty.m in Sources */,
 				12EB2B741BD795CD00F409B4 /* ZKADDetailViewController.m in Sources */,
 				3BD15FF81CE582AE0072B614 /* ZKWellcomeViewController.m in Sources */,

@@ -117,7 +117,7 @@
     
     if (self.cellType == homecellOne)
     {
-        
+
         NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:14]};
         CGSize size = [self.inforLabel.text boundingRectWithSize:CGSizeMake(kDeviceWidth-40, 20) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
         
