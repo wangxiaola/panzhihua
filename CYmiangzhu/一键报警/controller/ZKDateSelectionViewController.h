@@ -8,13 +8,13 @@
 
 #import "ZKNewBaseViewController.h"
 
-@class CustomCalendarViewController;
+@class ZKDateSelectionViewController;
 
 @protocol CustomCalendarViewControllerDelegate <NSObject>
 
 @optional
 
-- (void)customCalendarViewController:(CustomCalendarViewController *)customCalendarViewController didSelectedDate:(NSDate *)date;
+- (void)customCalendarViewController:(ZKDateSelectionViewController *)customCalendarViewController didSelectedDate:(NSString *)date;
 
 @end
 
@@ -22,4 +22,7 @@
 @interface ZKDateSelectionViewController : ZKNewBaseViewController
 
 @property (weak, nonatomic)id<CustomCalendarViewControllerDelegate>delegate;
+
+- (instancetype)initNsdate:(NSDate*)date;
+
 @end

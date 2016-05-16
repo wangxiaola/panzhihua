@@ -83,7 +83,7 @@ static NSString *labelCell = @"labelCell";
         //1,创建一个日期格式化器
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         // 2,设置格式
-        [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [formatter setDateFormat:@"yyyy-M-d HH:mm"];
         // 3,格式化日期
         NSString *dataStr = [formatter stringFromDate:date];
         self.dataTextFielf.text = dataStr;
@@ -179,7 +179,7 @@ static NSString *labelCell = @"labelCell";
     else
     {
         
-        NSString *indentfier = [NSString stringWithFormat:@"stataCell%d",indexPath.row];
+        NSString *indentfier = [NSString stringWithFormat:@"stataCell%ld",(long)indexPath.row];
         
         UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:indentfier];
         if (!cell) {
@@ -248,7 +248,17 @@ static NSString *labelCell = @"labelCell";
 
     if (indexPath.section == 0 && indexPath.row == 0) {
         
-        ZKDateSelectionViewController *dateVc = [[ZKDateSelectionViewController alloc] init];
+        NSString*string = self.dataTextFielf.text;
+        
+        NSDateFormatter *inputFormatter= [[NSDateFormatter alloc] init];
+        
+        [inputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+        
+        [inputFormatter setDateFormat:@"yyyy-M-d HH:mm"];
+        
+        NSDate*inputDate = [inputFormatter dateFromString:string];
+        
+        ZKDateSelectionViewController *dateVc = [[ZKDateSelectionViewController alloc] initNsdate:inputDate];
         dateVc.delegate = self;
         [self.navigationController pushViewController:dateVc animated:YES];
         
@@ -309,8 +319,9 @@ static NSString *labelCell = @"labelCell";
 
 #pragma  mark dataPick Delegate 
 
-- (void)customCalendarViewController:(CustomCalendarViewController *)customCalendarViewController didSelectedDate:(NSDate *)date;
+- (void)customCalendarViewController:(ZKDateSelectionViewController *)customCalendarViewController didSelectedDate:(NSString *)date;
 {
+    self.dataTextFielf.text = date;
 
 }
 
@@ -361,13 +372,13 @@ static NSString *labelCell = @"labelCell";
 - (void)tsbuttonClick
 {
 
-    if (!self.adderTextFielf.text)
+    if (self.adderTextFielf.text.length == 0)
     {
         
-        [self.view makeToast:@"请填写地址"];
+        [self.view makeToast:@"请填写发生地点"];
         return;
     }
-    if (!self.phoneTextFielf.text) {
+    if (self.phoneTextFielf.text.length == 0) {
         
         [self.view makeToast:@"请填写电话号码"];
         return;

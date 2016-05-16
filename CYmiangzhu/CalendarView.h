@@ -21,6 +21,8 @@
 @property (nonatomic,weak) id<CalendarDelegate> delegate;
 @property (nonatomic,weak) id<CalendarDataSource> datasource;
 
+@property (nonatomic, strong) NSCalendar *gregorian;
+@property (nonatomic, assign) NSCalendarUnit dayInfoUnits;
 
 // Font
 @property (nonatomic, strong) UIFont * defaultFont;

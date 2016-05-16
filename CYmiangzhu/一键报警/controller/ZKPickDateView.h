@@ -8,19 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ZKPickDateViewDelegate <NSObject>
 
-typedef void(^date) (NSString*str,NSString*type);
+- (void)selectHstr:(NSString*)h mStr:(NSString*)m;
+
+@end
 
 @interface ZKPickDateView : UIView<UIPickerViewDataSource,UIPickerViewDelegate>
-{
-    NSMutableArray *_leftArray;
-    NSMutableArray *_rightArray;
-    
-    UIPickerView *_picker;
-}
-@property(nonatomic,copy)date pickDate;
 
--(void)date:(date)list;
+- (void)xqData;
 
+-(id)initWithFrame:(CGRect)frame selcetDate:(NSDate*)date;
 
+@property (weak, nonatomic)id<ZKPickDateViewDelegate>delegate;
 @end

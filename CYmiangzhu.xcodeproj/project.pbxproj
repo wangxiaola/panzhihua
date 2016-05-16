@@ -666,6 +666,7 @@
 		8BCBF91B1B4BCC6A00DFFA08 /* ZKHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCBF91A1B4BCC6A00DFFA08 /* ZKHttp.m */; };
 		8BEAC1821B4CCD6C00009B43 /* GSLocationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAC1801B4CCD6C00009B43 /* GSLocationTool.m */; };
 		8BEAC21F1B4D262400009B43 /* RWWHttpRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEAC21E1B4D262400009B43 /* RWWHttpRequestTool.m */; };
+		A107FB2C1CE9F333001FC097 /* ZKPickerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A107FB2B1CE9F333001FC097 /* ZKPickerViewCell.m */; };
 		A12C3EAE1CE82A82007B8492 /* ZKLocationCallTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A12C3EAC1CE82A82007B8492 /* ZKLocationCallTableViewCell.m */; };
 		A12C3EAF1CE82A82007B8492 /* ZKLocationCallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12C3EAD1CE82A82007B8492 /* ZKLocationCallTableViewCell.xib */; };
 		A12C3EB71CE85B3C007B8492 /* ZKPictureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A12C3EB51CE85B3C007B8492 /* ZKPictureTableViewCell.m */; };
@@ -1852,6 +1853,8 @@
 		8BEAC1811B4CCD6C00009B43 /* GSLocationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSLocationTool.h; sourceTree = "<group>"; };
 		8BEAC21D1B4D262400009B43 /* RWWHttpRequestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWWHttpRequestTool.h; sourceTree = "<group>"; };
 		8BEAC21E1B4D262400009B43 /* RWWHttpRequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWWHttpRequestTool.m; sourceTree = "<group>"; };
+		A107FB2A1CE9F333001FC097 /* ZKPickerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKPickerViewCell.h; path = "CYmiangzhu/New主页/view/cell/listCell/ZKPickerViewCell.h"; sourceTree = SOURCE_ROOT; };
+		A107FB2B1CE9F333001FC097 /* ZKPickerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKPickerViewCell.m; path = "CYmiangzhu/New主页/view/cell/listCell/ZKPickerViewCell.m"; sourceTree = SOURCE_ROOT; };
 		A12C3EAB1CE82A82007B8492 /* ZKLocationCallTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKLocationCallTableViewCell.h; path = ../ZKLocationCallTableViewCell.h; sourceTree = "<group>"; };
 		A12C3EAC1CE82A82007B8492 /* ZKLocationCallTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKLocationCallTableViewCell.m; path = ../ZKLocationCallTableViewCell.m; sourceTree = "<group>"; };
 		A12C3EAD1CE82A82007B8492 /* ZKLocationCallTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZKLocationCallTableViewCell.xib; path = ../ZKLocationCallTableViewCell.xib; sourceTree = "<group>"; };
@@ -3760,6 +3763,8 @@
 			children = (
 				3BC798CA1CE9C71D0004DA2B /* ZKPickDateView.h */,
 				3BC798CB1CE9C71D0004DA2B /* ZKPickDateView.m */,
+				A107FB2A1CE9F333001FC097 /* ZKPickerViewCell.h */,
+				A107FB2B1CE9F333001FC097 /* ZKPickerViewCell.m */,
 				3BC7989C1CE96E140004DA2B /* cell */,
 			);
 			path = view;
@@ -5040,6 +5045,7 @@
 				3B1A86541C14346200E81C2D /* ZKHotelCommitOrderViewController.m in Sources */,
 				12389CA21B82C3F90026868A /* ZKInformationServiceViewController.m in Sources */,
 				EA2E41131C1A95430048AF54 /* ZKBaseLikeTableViewController.m in Sources */,
+				A107FB2C1CE9F333001FC097 /* ZKPickerViewCell.m in Sources */,
 				A170052C1C1882A300119402 /* MJRefreshAutoNormalFooter.m in Sources */,
 				EAC2B6C41BA2772400E9E75B /* LineDashPolyline.m in Sources */,
 				12BF1A571B42423F000E526B /* ZKMessagepromptView.m in Sources */,

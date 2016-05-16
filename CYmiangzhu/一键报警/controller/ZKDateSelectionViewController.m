@@ -11,30 +11,49 @@
 #import "ZKMoreReminderView.h"
 #import "ZKPickDateView.h"
 
-@interface ZKDateSelectionViewController ()<CalendarDataSource, CalendarDelegate>
+@interface ZKDateSelectionViewController ()<CalendarDataSource, CalendarDelegate,ZKPickDateViewDelegate>
 
 @property (nonatomic, strong) CalendarView * customCalendarView;
 @property (nonatomic, strong) NSCalendar * gregorian;
 @property (nonatomic, assign) NSInteger currentYear;
 
 @property (nonatomic, strong) NSDate *selectedDate;
-
+@property (nonatomic, strong) NSString *hmStr;
+@property (nonatomic, strong) NSDate * dqDate;
 @end
 
 @implementation ZKDateSelectionViewController
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+   
+}
 
+- (instancetype)initNsdate:(NSDate*)date;
+{
+    self = [super init];
+    if (self) {
+        
+        self.dqDate = date;
+    }
+
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:YJCorl(249, 249, 249)];
     
+     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"backimage" highIcon:@"backimage" target:self action:@selector(sender)];
+    
     self.title = @"选择日期";
     
-    _gregorian       = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    self.selectedDate = self.dqDate;
     
+    _gregorian       = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+ 
     _customCalendarView                             = [[CalendarView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, (kDeviceHeight-64)*4/7)];
     _customCalendarView.delegate                    = self;
     _customCalendarView.datasource                  = self;
-    _customCalendarView.calendarDate                = [NSDate date];
+    _customCalendarView.calendarDate                = self.dqDate;
     _customCalendarView.titleFont                   = [UIFont systemFontOfSize:11];
     //    _customCalendarView.originY                     = 10;
     _customCalendarView.monthAndDayTextColor        = CYBColorGreen;
@@ -45,6 +64,15 @@
     _customCalendarView.dayTxtColorWithData         = [UIColor blackColor];
     _customCalendarView.dayTxtColorSelected         = [UIColor whiteColor];
     _customCalendarView.borderColor                 = [UIColor blackColor];
+    
+    NSDateComponents *components = [_customCalendarView.gregorian  components:_customCalendarView.dayInfoUnits fromDate:_dqDate];
+    components.hour         = 0;
+    components.minute       = 0;
+    components.second       = 0;
+    
+    _customCalendarView.selectedDate = [_customCalendarView.gregorian dateFromComponents:components];
+
+    
     _customCalendarView.borderWidth                 = 0;
     _customCalendarView.allowsChangeMonthByDayTap   = YES;
     _customCalendarView.allowsChangeMonthByButtons  = YES;
@@ -57,13 +85,15 @@
         _customCalendarView.center = CGPointMake(self.view.center.x, _customCalendarView.center.y);
     });
     
-    NSDateComponents * yearComponent = [_gregorian components:NSCalendarUnitYear fromDate:[NSDate date]];
+    NSDateComponents * yearComponent = [_gregorian components:NSCalendarUnitYear fromDate:self.dqDate];
     _currentYear = yearComponent.year;
     
     
-    ZKPickDateView *pickView = [[ZKPickDateView alloc] initWithFrame:CGRectMake(0, _customCalendarView.frame.size.height+74, kDeviceWidth, kDeviceHeight - _customCalendarView.frame.size.height+74)];
-    [self.view addSubview:pickView];
+    ZKPickDateView *pickView = [[ZKPickDateView alloc] initWithFrame:CGRectMake(0, _customCalendarView.frame.size.height+74, kDeviceWidth, kDeviceHeight - _customCalendarView.frame.size.height+74) selcetDate:self.dqDate];
     
+    pickView.delegate = self;
+    [self.view addSubview:pickView];
+    [pickView xqData];
 }
 #pragma mark - Gesture recognizer
 
@@ -97,6 +127,11 @@
     
     
 }
+#pragma mark -- ZKPickDateViewDelegate
+- (void)selectHstr:(NSString*)h mStr:(NSString*)m;
+{
+    self.hmStr = [NSString stringWithFormat:@"%@:%@",h,m];
+}
 
 #pragma mark - CalendarDataSource protocol conformance
 
@@ -123,39 +158,29 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)back
-{
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-    
-}
+
 
 -(void)sender
 {
     
+    
     if ([self timeAfterSuper:_selectedDate]) {
-        
-        [self dismissViewControllerAnimated:YES completion:^{
-            
-            if ([self timeAfterSuper:_selectedDate]) {
-                
-                if ([self.delegate respondsToSelector:@selector(customCalendarViewController:didSelectedDate:)]) {
-                    [self.delegate customCalendarViewController:self didSelectedDate:self.selectedDate];
-                }
-            }
-            
-            
-        }];
-        
+
+        NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+        fmt.dateFormat = @"yyyy-M-d";
+        NSString *dateStr = [fmt stringFromDate:_selectedDate];
+        [self.delegate customCalendarViewController:self didSelectedDate:[NSString stringWithFormat:@"%@ %@",dateStr,self.hmStr]];
+        [self.navigationController popViewControllerAnimated:YES];
+
     }else{
+        
         ZKMoreReminderView *more =[[ZKMoreReminderView alloc]initTs:@"温馨提示" MarkedWords:@"当前选择的时间无效，请重新选择时间."];
         [more show];
         [more  sectec:^(int pgx) {
             
             if (pgx == 0) {
                 
-                [self dismissViewControllerAnimated:YES completion:nil];
+              [self.navigationController popViewControllerAnimated:YES];
             }
         }];
         
@@ -173,7 +198,7 @@
     
     
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-    fmt.dateFormat = @"yyyyMMdd";
+    fmt.dateFormat = @"yyyyMd";
     
     NSInteger dateStr = [fmt stringFromDate:_selectedDate].integerValue;
     NSInteger newStr = [fmt stringFromDate:data].integerValue;
@@ -185,7 +210,6 @@
         return dateStr>=newStr ? YES:NO;
         
     }
-    NSLog(@"%ld -- %ld",(long)dateStr,(long)newStr);
     
     
     

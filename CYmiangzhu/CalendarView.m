@@ -7,7 +7,7 @@
 @interface CalendarView()
 
 // Gregorian calendar
-@property (nonatomic, strong) NSCalendar *gregorian;
+
 
 // Selected day
 
@@ -16,7 +16,7 @@
 @property (nonatomic, assign) NSInteger dayWidth;
 
 // NSCalendarUnit for day, month, year and era.
-@property (nonatomic, assign) NSCalendarUnit dayInfoUnits;
+
 
 // Array of label of weekdays
 @property (nonatomic, strong) NSArray * weekDayNames;

@@ -7,6 +7,7 @@
 //
 
 #import "ZKPickDateView.h"
+#import "ZKPickerViewCell.h"
 
 
 #define contentHeight 180
@@ -14,85 +15,41 @@
 @implementation ZKPickDateView
 
 {
-    
-    
-    NSArray *lyarArray;
-    
-    
+    NSArray *_leftArray;
+    NSMutableArray *_rightArray;
+    NSDate * _newDate;
+    UIPickerView *_picker;
 }
 
 
 
--(id)initWithFrame:(CGRect)frame;
+-(id)initWithFrame:(CGRect)frame selcetDate:(NSDate*)date;
 {
     
     self =[super initWithFrame:frame];
     if (self) {
         
         self.backgroundColor = [UIColor whiteColor];
+        _newDate = date;
+        _leftArray = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19",@"20",@"21",@"22",@"23",@"00"];
         
-        _leftArray = [[NSMutableArray alloc] initWithObjects:@"今天",@"明天",@"后天", nil];
+        _rightArray = [NSMutableArray arrayWithCapacity:60];
         
-        lyarArray =[self latelyEightTime];
-        
-        
-        // NSDate 日期类型
-        NSDate *now = [NSDate date];
-        
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        
-        
-        // 2,设置格式
-        [formatter setDateFormat:@"HH"];
-        
-        // 3,格式化日期
-        NSInteger numTimer = [[formatter stringFromDate:now] integerValue];
-        
-        
-        NSMutableArray *array1 =[NSMutableArray arrayWithCapacity:0];
-        
-        NSInteger num =24-numTimer;
-        
-        
-        for (int i=0; i<num; i++) {
-            
-            NSString *str;
-            
-            
-            if (i ==0) {
+        for (int i = 1; i< 61; i++) {
+            if (i == 60) {
                 
-                str =@"现在";
-            }else{
-                
-                numTimer ++;
-                str =[NSString stringWithFormat:@"%ld点",(long)numTimer];
-                
+                [_rightArray addObject:[NSString stringWithFormat:@"00"]];
+            }
+            else
+            {
+                [_rightArray addObject:[NSString stringWithFormat:@"%d",i]];
             }
             
-            [array1 addObject:str];
-            
         }
         
-        // 小学玩的游戏
-        NSMutableArray *array2 = [[NSMutableArray alloc] initWithCapacity:0];//5
-        for(int i = 0; i < 24; i++){
-            NSString *time = [NSString stringWithFormat:@"%d点", i];
-            [array2 addObject:time];
-        }
-        
-        
-        
-        // 大学玩的游戏
-        NSMutableArray *array3 = [[NSMutableArray alloc] initWithArray:array2 copyItems:YES];//7
-        
-        // 把三个小数组添加到大数组中
-        _rightArray = [[NSMutableArray alloc] initWithObjects:array1,array2,array3, nil];
-        
-        
-        _picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, frame.size.height/2)];
+        _picker = [[UIPickerView alloc] initWithFrame:CGRectMake(kDeviceWidth/4, 0, kDeviceWidth/2, frame.size.height/2)];
         _picker.delegate = self;
         _picker.dataSource = self;
-        
         // 显示选中的指示器
         _picker.showsSelectionIndicator = YES;
         
@@ -100,73 +57,58 @@
         [self addSubview:_picker];
         
         
-        
     }
     
     return self;
 }
 
-
-//获取最近几天时间 数组
--(NSMutableArray *)latelyEightTime{
-    NSMutableArray *eightArr = [[NSMutableArray alloc] init];
-    for (int i = 0; i <3; i ++) {
-        //从现在开始的24小时
-        NSTimeInterval secondsPerDay =i * 24*60*60;
-        
-        NSDate *curDate = [NSDate dateWithTimeIntervalSinceNow:secondsPerDay];               NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];         [dateFormatter setDateFormat:@"yyyy-MM-dd"];         NSString *dateStr = [dateFormatter stringFromDate:curDate];
-        //组合时间
-        NSString *strTime = [NSString stringWithFormat:@"%@",dateStr];
-        [eightArr addObject:strTime];
-    }
-    return eightArr;
-}
-
-
-
--(void)date:(date)list;
+- (void)xqData;
 {
-    self.pickDate =list;
+    NSDate *date = _newDate;
+    //1,创建一个日期格式化器
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    // 2,设置格式
+    [formatter setDateFormat:@"HH:mm"];
     
+    // 3,格式化日期
+    NSString *string = [formatter stringFromDate:date];
+    
+    NSArray *titis = [string componentsSeparatedByString:@":"];
+    
+    //选中当前时间
+    [_leftArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *str = obj;
+        if ([str isEqualToString:titis[0]]) {
+            
+            [_picker selectRow:idx inComponent:0 animated:YES];
+            
+        }
+    }];
+    
+    [_rightArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSString *str = obj;
+        if ([str isEqualToString:titis[1]]) {
+            
+            [_picker selectRow:idx inComponent:1 animated:YES];
+            
+        }
+    }];
+    
+    
+    [self determineClick];
 }
--(void)determineClick
+- (void)determineClick
 {
     // 用户在第0列中选中的行数
     NSInteger i = [_picker selectedRowInComponent:0];
     
     // 用户在第一列中选中的行数
     NSInteger j = [_picker selectedRowInComponent:1];
+    NSString *h = [_leftArray objectAtIndex:i];
+    NSString *m = [_rightArray objectAtIndex:j];
     
-    // 根据i 确定右边的数据来源于大数组中哪一个小数组
-    NSMutableArray *smallArray = [_rightArray objectAtIndex:i];
-    
-    if (smallArray.count ==0) {
-        
-        [self makeToast:@"数据正在加载！"];
-        
-        return;
-    }
-    NSLog(@"显示用户选中的值");
-    
-    // 根据j 确定右边选中的标题 是小数组中的哪一个
-    NSString *title = [smallArray objectAtIndex:j];
-    
-    NSString *timer =[_leftArray objectAtIndex:i];
-    
-    NSString *tpyehh =title;
-    
-    if ([tpyehh isEqualToString:@"现在"] ) {
-        
-        NSInteger k =[[smallArray objectAtIndex:j+1] integerValue]-1;
-        tpyehh =[NSString stringWithFormat:@"%ld",(long)k];
-    }
-    
-    
-    NSString *tpyeTimer =[NSString stringWithFormat:@"%@ %@:00:00",lyarArray[i],[tpyehh  stringByReplacingOccurrencesOfString:@"点" withString:@""]];
-    
-    self.pickDate([NSString stringWithFormat:@"%@%@",timer,title],tpyeTimer);
-    
-
+    [self.delegate selectHstr:h mStr:m];
     
     
 }
@@ -193,65 +135,41 @@
     {
         // 设置第1列的行数
         
-        // 获取到第0列 选中的是哪一行
-        NSInteger i = [pickerView selectedRowInComponent:0];
-        
-        NSMutableArray *smallArray = [_rightArray objectAtIndex:i];
-        
-        return smallArray.count;
+        return _rightArray.count;
     }
 }
 
-
-
-
-// 设置具体某一类中某一行的标题的
-// 这个协议方法会调用多次
-// 每次系统在调用这个协议方法时,会告诉你现在要设置 哪一列 哪一行的标题
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
 {
+    return 60;
+}
+
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    
+    ZKPickerViewCell *pickerCell = (ZKPickerViewCell *)view;
+    if (!pickerCell) {
+        pickerCell = [[ZKPickerViewCell alloc] initWithFrame:(CGRect){CGPointZero, 60, 60} ];
+    }
     
     if (component == 0) {
-        // 现在要设置第0列中的标题了
         
-        NSString *title = [_leftArray objectAtIndex:row];
-        return title;
+        pickerCell.label.text = _leftArray[row];
     }
     else
     {
-        // 获取到第0列 选中的是哪一行
-        NSInteger i = [pickerView selectedRowInComponent:0];
-        
-        // 先根据左边选中的是哪一行 从大数组中取出一个小数组(目的是确定一下哪个小数组中放了要显示的标题)
-        NSMutableArray *smallArray = [_rightArray objectAtIndex:i];
-        
-        NSString *title = [smallArray objectAtIndex:row];
-        
-        return title;
+        pickerCell.label.text = _rightArray[row];
     }
+    return pickerCell;
 }
 // 当选中某一行的时候调用
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    if (component == 0) {
-        // 刷新右边的数据
-        [pickerView reloadComponent:1];
-        
-        // 让picker选中 指定的行
-        [pickerView selectRow:0 inComponent:1 animated:YES];
-    }
+    [self determineClick];
+    ZKPickerViewCell * pickerCell =  (ZKPickerViewCell*)[pickerView viewForRow:row forComponent:component];
+    [pickerCell select];
 }
-/*
- - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
- PickerViewCell *pickerCell = (PickerViewCell *)view;
- if (!pickerCell) {
- NSInteger column = 3;
- pickerCell = [[PickerViewCell alloc] initWithFrame:(CGRect){CGPointZero, [UIScreen mainScreen].bounds.size.width, 45.0f} column:column];
- }
- [pickerCell setLabelTexts:@[...]];
- return pickerCell;
- }
- */
+
 
 /*
  // Only override drawRect: if you perform custom drawing.
