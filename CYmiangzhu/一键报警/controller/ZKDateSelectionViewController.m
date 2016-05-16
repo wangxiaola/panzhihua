@@ -1,58 +1,49 @@
 //
-//  CustomCalendarViewController.h
-//  sampleCalendar
+//  ZKDateSelectionViewController.m
+//  CYmiangzhu
 //
-//  Created by Michael Azevedo on 21/07/2014.
-//  Copyright (c) 2014 Michael Azevedo All rights reserved.
+//  Created by 王小腊 on 16/5/16.
+//  Copyright © 2016年 WangXiaoLa. All rights reserved.
 //
 
-#import "CustomCalendarViewController.h"
+#import "ZKDateSelectionViewController.h"
 #import "CalendarView.h"
 #import "ZKMoreReminderView.h"
+#import "ZKPickDateView.h"
 
-@interface CustomCalendarViewController () <CalendarDataSource, CalendarDelegate>
+@interface ZKDateSelectionViewController ()<CalendarDataSource, CalendarDelegate>
 
 @property (nonatomic, strong) CalendarView * customCalendarView;
 @property (nonatomic, strong) NSCalendar * gregorian;
 @property (nonatomic, assign) NSInteger currentYear;
 
 @property (nonatomic, strong) NSDate *selectedDate;
+
 @end
 
-@implementation CustomCalendarViewController
+@implementation ZKDateSelectionViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    
+- (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    [self.view setBackgroundColor:YJCorl(249, 249, 249)];
     
-    self.titeLabel.text = @"选择日期";
+    self.title = @"选择日期";
     
     _gregorian       = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
-    _customCalendarView                             = [[CalendarView alloc]initWithFrame:CGRectMake(0, navigationHeghit, self.view.bounds.size.width, 360)];
+    _customCalendarView                             = [[CalendarView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, (kDeviceHeight-64)*4/7)];
     _customCalendarView.delegate                    = self;
     _customCalendarView.datasource                  = self;
     _customCalendarView.calendarDate                = [NSDate date];
     _customCalendarView.titleFont                   = [UIFont systemFontOfSize:11];
-//    _customCalendarView.originY                     = 10;
-    _customCalendarView.monthAndDayTextColor        = [UIColor colorWithRed:51/255.0 green:202/255.0 blue:171/255.0 alpha:1];
+    //    _customCalendarView.originY                     = 10;
+    _customCalendarView.monthAndDayTextColor        = CYBColorGreen;
     _customCalendarView.dayBgColorWithData          = [UIColor whiteColor];
-    _customCalendarView.dayBgColorWithoutData       = [UIColor whiteColor];
+    _customCalendarView.dayBgColorWithoutData       = [UIColor clearColor];
     _customCalendarView.dayBgColorSelected          = [UIColor colorWithRed:51/255.0 green:202/255.0 blue:171/255.0 alpha:1];
     _customCalendarView.dayTxtColorWithoutData      = RGBCOLOR(57, 69, 84);
     _customCalendarView.dayTxtColorWithData         = [UIColor blackColor];
-    _customCalendarView.dayTxtColorSelected         = [UIColor whiteColor];    
+    _customCalendarView.dayTxtColorSelected         = [UIColor whiteColor];
     _customCalendarView.borderColor                 = [UIColor blackColor];
     _customCalendarView.borderWidth                 = 0;
     _customCalendarView.allowsChangeMonthByDayTap   = YES;
@@ -60,30 +51,20 @@
     _customCalendarView.keepSelDayWhenMonthChange   = YES;
     _customCalendarView.nextMonthAnimation          = UIViewAnimationOptionTransitionCrossDissolve;
     _customCalendarView.prevMonthAnimation          = UIViewAnimationOptionTransitionCrossDissolve;
-//    _customCalendarView.hideMonthLabel              = YES;
     
-    dispatch_async(dispatch_get_main_queue(), ^{        
+    dispatch_async(dispatch_get_main_queue(), ^{
         [self.view addSubview:_customCalendarView];
         _customCalendarView.center = CGPointMake(self.view.center.x, _customCalendarView.center.y);
     });
     
     NSDateComponents * yearComponent = [_gregorian components:NSCalendarUnitYear fromDate:[NSDate date]];
     _currentYear = yearComponent.year;
-
-    UIButton *bty =[[UIButton alloc]initWithFrame:CGRectMake(30, kDeviceHeight - 100, kDeviceWidth-60, 36)];
-    bty.backgroundColor = CYBColorGreen;
-    [bty setTitle:@"确 定" forState:0];
-    bty.layer.masksToBounds = YES;
-    bty.layer.cornerRadius = 4;
-    [bty addTarget:self action:@selector(sender) forControlEvents:UIControlEventTouchUpInside];
-    [bty setTitleColor:[UIColor whiteColor] forState:0];
-    bty.titleLabel.font = [UIFont systemFontOfSize:14];
-    [self.view addSubview:bty];
-
     
-
+    
+    ZKPickDateView *pickView = [[ZKPickDateView alloc] initWithFrame:CGRectMake(0, _customCalendarView.frame.size.height+74, kDeviceWidth, kDeviceHeight - _customCalendarView.frame.size.height+74)];
+    [self.view addSubview:pickView];
+    
 }
-
 #pragma mark - Gesture recognizer
 
 -(void)swipeleft:(id)sender
@@ -100,7 +81,7 @@
 
 -(void)dayChangedToDate:(NSDate *)selectedDate
 {
-
+    
     self.selectedDate = selectedDate;
     
     if (![self timeAfterSuper: self.selectedDate]) {
@@ -113,15 +94,15 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-
-
+    
+    
 }
 
 #pragma mark - CalendarDataSource protocol conformance
 
 -(BOOL)isDataForDate:(NSDate *)date
 {
-
+    
     
     if ([date compare:[NSDate date]] == NSOrderedAscending)
         return YES;
@@ -130,7 +111,7 @@
 
 -(BOOL)canSwipeToDate:(NSDate *)date
 {
-
+    
     return YES;
 }
 
@@ -209,5 +190,15 @@
     
     
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

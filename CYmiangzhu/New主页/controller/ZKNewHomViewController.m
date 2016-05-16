@@ -188,8 +188,7 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
 
 - (void)loadNewTow
 {
-    
-    
+
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"method"] = @"strategylist";
     params[@"rows"] = @"2";

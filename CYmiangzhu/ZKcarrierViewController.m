@@ -86,7 +86,7 @@
  
     ZKCallPoliceViewController *callVc=[[ZKCallPoliceViewController alloc]init];
     
-    callVc.tabBarItem.title = @"事件查询";
+    callVc.tabBarItem.title = @"一键报警";
     callVc.tabBarItem.image = [[UIImage imageNamed:@"f06"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     callVc.tabBarItem.selectedImage = [[UIImage imageNamed:@"f_06"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     callVc.tabBarItem.titlePositionAdjustment =UIOffsetMake(0, -0.8);

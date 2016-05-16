@@ -15,6 +15,8 @@
 @interface WaterF ()
 
 @property (nonatomic, strong) WaterFCell* cell;
+@property (nonatomic, strong) UIImageView *lyImageView;
+
 @end
 
 @implementation WaterF
@@ -38,7 +40,18 @@
     
     return _textsArr;
 }
+- (UIImageView *)lyImageView
+{
 
+    if (!_lyImageView) {
+        
+        _lyImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        _lyImageView.center = self.view.center;
+        [self.view addSubview:_lyImageView];
+    }
+    
+    return _lyImageView;
+}
 - (id)initWithCollectionViewLayout:(UICollectionViewLayout *)layout
 {
     self = [super initWithCollectionViewLayout:layout];
@@ -103,17 +116,18 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 
-        NSInteger count = _imagesArr.count;
+        NSInteger count = self.imagesArr.count;
         // 1.封装图片数据
         NSMutableArray *photos = [NSMutableArray arrayWithCapacity:count];
         
         
         for (int i = 0; i<count; i++) {
             
-            NSString *titis = _textsArr[i];
+            NSString *titis = self.textsArr[i];
             MJPhoto *photo = [[MJPhoto alloc] init];
             photo.titis = titis;
-            photo.image = [_imagesArr objectAtIndex:i]; // 图片路径
+            photo.srcImageView = self.lyImageView;
+            photo.image = [self.imagesArr objectAtIndex:i]; // 图片路径
             [photos addObject:photo];
         }
         

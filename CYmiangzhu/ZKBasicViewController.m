@@ -623,7 +623,7 @@ int popLoginCount = 0;
             
             CustomCalendarViewController *datePicker = [[CustomCalendarViewController alloc] init];
             datePicker.delegate = self;
-            [datePicker setDate:dataGBK];
+//            [datePicker setDate:dataGBK];
             
             [self presentViewController:datePicker animated:YES completion:nil];
 //            [self.navigationController pushViewController:datePicker animated:YES];

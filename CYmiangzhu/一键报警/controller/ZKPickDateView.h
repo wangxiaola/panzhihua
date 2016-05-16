@@ -2,12 +2,12 @@
 //  ZKPickDateView.h
 //  CYmiangzhu
 //
-//  Created by Daqsoft-Mac on 15/9/30.
-//  Copyright (c) 2015年 WangXiaoLa. All rights reserved.
+//  Created by 王小腊 on 16/5/16.
+//  Copyright © 2016年 WangXiaoLa. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "ZKAppDelegate.h"
+
 
 typedef void(^date) (NSString*str,NSString*type);
 
@@ -22,6 +22,5 @@ typedef void(^date) (NSString*str,NSString*type);
 
 -(void)date:(date)list;
 
--(void)show;
 
 @end

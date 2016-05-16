@@ -18,13 +18,15 @@
 
 #import "ZKEvaluationViewController.h"
 #import "ZKregisterViewController.h"
+#import "ZKPhotoGalleryViewController.h"
 
 @interface ZKWellcomeJTListViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
 
 @property (nonatomic, strong) ZKWellcomeJTMode *list;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
-@property (nonatomic, strong) NSMutableArray * imageArray;
+@property (nonatomic, strong) NSMutableArray * imageArray;//图片
+@property (nonatomic, strong) NSMutableArray * titisArray;//文字
 //评价个数
 @property (nonatomic, assign) NSInteger pjPage;
 //特色高度
@@ -36,6 +38,7 @@
 @property (nonatomic, strong) NSMutableArray * titisNumbers;
 @property (nonatomic, strong) NSArray *headerTitis;
 @property (nonatomic, strong) NSArray *headerImages;
+
 @end
 
 @implementation ZKWellcomeJTListViewController
@@ -49,6 +52,16 @@
     
     return _titisNumbers;
 }
+- (NSMutableArray *)titisArray
+{
+
+    if (!_titisArray) {
+        
+        _titisArray = [NSMutableArray arrayWithCapacity:0];
+    }
+    return _titisArray;
+}
+
 - (NSMutableArray *)imageArray
 {
     if (!_imageArray) {
@@ -67,10 +80,9 @@
         _cycleScrollView.autoScrollTimeInterval = 5;
         _cycleScrollView.pageControlDotSize =CGSizeMake(5, 5);
         _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+        _cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
         _cycleScrollView.bannerImageViewContentMode =  UIViewContentModeScaleAspectFill;
         _cycleScrollView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
-        _cycleScrollView.pageDotColor = YJCorl(142, 163, 125);
-        
         
     }
     return _cycleScrollView;
@@ -129,12 +141,20 @@
     self.tsHeight = 70;
     self.jtHeight = 70;
     self.headerTitis = @[@"720全景",@"基地特色",@"基地设施",@"图片基地",];
-    self.headerImages = @[@"z_right_menu01",@"z_right_menu01",@"z_right_menu01",@"z_right_menu01"];
+    self.headerImages = @[@"ky_cell_1",@"ky_cell_2",@"ky_cell_3",@"ky_cell_4"];
     [self.titisNumbers addObjectsFromArray:@[@"3",@"3",]];
     
     [self.imageArray addObject:[UIImage imageNamed:@"season_1.jpg"]];
     [self.imageArray addObject:[UIImage imageNamed:@"season_2.jpg"]];
     [self.imageArray addObject:[UIImage imageNamed:@"season_3.jpg"]];
+    [self.imageArray addObject:[UIImage imageNamed:@"season_1.jpg"]];
+    [self.imageArray addObject:[UIImage imageNamed:@"season_2.jpg"]];
+    
+    [self.titisArray addObject:@"不好说"];
+    [self.titisArray addObject:@"投点钱"];
+    [self.titisArray addObject:@"赚了100块"];
+    [self.titisArray addObject:@"期限可期"];
+    [self.titisArray addObject:@"太卡帕拉"];
     
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.cycleScrollView;
@@ -142,7 +162,7 @@
     //         --- 模拟加载延迟
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.cycleScrollView.localizationImageNamesGroup = self.imageArray;
-        self.cycleScrollView.titlesGroup = @[@"不好说",@"投点钱",@"赚了100块"];
+        self.cycleScrollView.titlesGroup = self.titisArray;
     });
     
     
@@ -593,6 +613,8 @@
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index;
 {
     
+    ZKPhotoGalleryViewController * photoVC =[[ZKPhotoGalleryViewController alloc]initImages:self.imageArray photoTitis:self.titisArray title:@"花芬基地"];
+    [self.navigationController pushViewController:photoVC animated:YES];
     
 }
 

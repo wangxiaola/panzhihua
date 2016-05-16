@@ -2,8 +2,8 @@
 //  ZKPickDateView.m
 //  CYmiangzhu
 //
-//  Created by Daqsoft-Mac on 15/9/30.
-//  Copyright (c) 2015年 WangXiaoLa. All rights reserved.
+//  Created by 王小腊 on 16/5/16.
+//  Copyright © 2016年 WangXiaoLa. All rights reserved.
 //
 
 #import "ZKPickDateView.h"
@@ -15,54 +15,21 @@
 
 {
     
-    UIView *contentView;
     
     NSArray *lyarArray;
     
     
 }
 
--(void)dism;
-{
-    self.alpha =0;
-    
-    [self removeFromSuperview];
-    
-}
--(void)show;
-{
-    self.alpha = 1;
-    
-    
-    [[APPDELEGATE window] addSubview:self];
-    contentView.transform = CGAffineTransformMakeScale(0, 0);
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        contentView.transform = CGAffineTransformMakeScale(1.2, 1.2);
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            contentView.transform = CGAffineTransformMakeScale(1, 1);
-        } completion:^(BOOL finished) {
-            
-        }];
-    }];
-    
-}
 
--(id)init;
+
+-(id)initWithFrame:(CGRect)frame;
 {
     
-    self =[super initWithFrame:APPDELEGATE.window.bounds];
+    self =[super initWithFrame:frame];
     if (self) {
         
-        UIView *hideButton = [[UIView alloc] initWithFrame:self.bounds];
-        hideButton.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-
-        [self addSubview:hideButton];
-        
-        contentView = [[UIView alloc] initWithFrame:CGRectMake(0, kDeviceHeight-180, kDeviceWidth, contentHeight)];
-        contentView.backgroundColor = [UIColor whiteColor];
-        [self addSubview:contentView];
-        
+        self.backgroundColor = [UIColor whiteColor];
         
         _leftArray = [[NSMutableArray alloc] initWithObjects:@"今天",@"明天",@"后天", nil];
         
@@ -81,7 +48,7 @@
         // 3,格式化日期
         NSInteger numTimer = [[formatter stringFromDate:now] integerValue];
         
-
+        
         NSMutableArray *array1 =[NSMutableArray arrayWithCapacity:0];
         
         NSInteger num =24-numTimer;
@@ -90,20 +57,20 @@
         for (int i=0; i<num; i++) {
             
             NSString *str;
-        
+            
             
             if (i ==0) {
                 
                 str =@"现在";
             }else{
-            
+                
                 numTimer ++;
                 str =[NSString stringWithFormat:@"%ld点",(long)numTimer];
-            
+                
             }
             
             [array1 addObject:str];
-   
+            
         }
         
         // 小学玩的游戏
@@ -113,7 +80,7 @@
             [array2 addObject:time];
         }
         
-    
+        
         
         // 大学玩的游戏
         NSMutableArray *array3 = [[NSMutableArray alloc] initWithArray:array2 copyItems:YES];//7
@@ -122,33 +89,20 @@
         _rightArray = [[NSMutableArray alloc] initWithObjects:array1,array2,array3, nil];
         
         
-        _picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, contentHeight)];
+        _picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, frame.size.height/2)];
         _picker.delegate = self;
         _picker.dataSource = self;
         
         // 显示选中的指示器
         _picker.showsSelectionIndicator = YES;
-       
         
-        [contentView addSubview:_picker];
-
         
-        UIButton *cancelButton =[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 30)];
-        cancelButton.titleLabel.font =[UIFont systemFontOfSize:12];
-        [cancelButton setTitle:@"取消" forState:0];
-        [cancelButton addTarget:self action:@selector(dism) forControlEvents:UIControlEventTouchUpInside];
-        [cancelButton setTitleColor:YJCorl(148, 148, 148) forState:0];
-        [contentView addSubview:cancelButton];
+        [self addSubview:_picker];
         
-        UIButton *determineButton =[[UIButton alloc]initWithFrame:CGRectMake(kDeviceWidth-50, 0, 50, 30)];
-        determineButton.titleLabel.font =[UIFont systemFontOfSize:12];
-        [determineButton setTitle:@"确定" forState:0];
-        [determineButton addTarget:self action:@selector(determineClick) forControlEvents:UIControlEventTouchUpInside];
-        [determineButton setTitleColor:CYBColorGreen forState:0];
-        [contentView addSubview:determineButton];
+        
         
     }
-
+    
     return self;
 }
 
@@ -173,7 +127,7 @@
 -(void)date:(date)list;
 {
     self.pickDate =list;
-
+    
 }
 -(void)determineClick
 {
@@ -193,7 +147,7 @@
         return;
     }
     NSLog(@"显示用户选中的值");
-
+    
     // 根据j 确定右边选中的标题 是小数组中的哪一个
     NSString *title = [smallArray objectAtIndex:j];
     
@@ -211,10 +165,10 @@
     NSString *tpyeTimer =[NSString stringWithFormat:@"%@ %@:00:00",lyarArray[i],[tpyehh  stringByReplacingOccurrencesOfString:@"点" withString:@""]];
     
     self.pickDate([NSString stringWithFormat:@"%@%@",timer,title],tpyeTimer);
-
-    [self dism];
     
 
+    
+    
 }
 
 
@@ -287,14 +241,24 @@
         [pickerView selectRow:0 inComponent:1 animated:YES];
     }
 }
-
+/*
+ - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+ PickerViewCell *pickerCell = (PickerViewCell *)view;
+ if (!pickerCell) {
+ NSInteger column = 3;
+ pickerCell = [[PickerViewCell alloc] initWithFrame:(CGRect){CGPointZero, [UIScreen mainScreen].bounds.size.width, 45.0f} column:column];
+ }
+ [pickerCell setLabelTexts:@[...]];
+ return pickerCell;
+ }
+ */
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

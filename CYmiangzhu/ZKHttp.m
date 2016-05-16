@@ -397,7 +397,6 @@
             
             
             id jsonData = [NSJSONSerialization JSONObjectWithData:data options:0 error:Nil];
-            NSLog(@"%@",jsonData);
             
             if ([jsonData  isKindOfClass:[NSArray  class]]) {
                 NSDictionary*  dic = jsonData[0];

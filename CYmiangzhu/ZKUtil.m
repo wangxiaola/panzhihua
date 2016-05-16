@@ -237,7 +237,7 @@
 //验证电话号码
 +(BOOL)isValidateTelNumber:(NSString *)number {
     
-    NSString *strRegex = @"[0-9]{1,20}";
+    NSString *strRegex = @"^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d{8}$";
     
     BOOL rt = [self isValidateRegularExpression:number byExpression:strRegex];
     

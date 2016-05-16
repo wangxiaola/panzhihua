@@ -17,13 +17,12 @@ NSString *const ZKInforPjCellID = @"ZKInforPjCellID";
     [super awakeFromNib];
     // Initialization code
     
-    float cellw = (kDeviceWidth-30)/5;
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    [flowLayout setItemSize:CGSizeMake(cellw, 40)];//设置cell的尺寸
+    [flowLayout setItemSize:CGSizeMake(50, 50)];//设置cell的尺寸
     [flowLayout setScrollDirection:
      UICollectionViewScrollDirectionVertical];//设置其布局方向
-    flowLayout.minimumInteritemSpacing = 0;
-    flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);//设置其边界
+    flowLayout.minimumInteritemSpacing = 5;
+    flowLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);//设置其边界
     self.collectionView.collectionViewLayout = flowLayout;
 
     self.collectionView.dataSource = self;

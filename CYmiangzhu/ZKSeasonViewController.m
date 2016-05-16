@@ -26,7 +26,7 @@
 
 
 
-static NSString * const reuseIdentifier = @"Cell";
+//static NSString * const reuseIdentifier = @"Cell";
 
 
 
@@ -44,7 +44,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [flowLayout setMinimumInteritemSpacing:10]; //设置 y 间距
 
     self.waterfall = [[WaterF alloc]initWithCollectionViewLayout:flowLayout];
-    self.waterfall.sectionNum = 2;
+    self.waterfall.sectionNum = 1;
     self.waterfall.imagewidth = kDeviceWidth/2-15;
     [contenView addSubview:self.waterfall.view];
     

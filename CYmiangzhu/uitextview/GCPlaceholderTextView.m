@@ -54,8 +54,8 @@
 //    if ([self.realText isEqualToString:placeholder]) {
 //        self.text = aPlaceholder;
 //    }
-//    
-//    [self endEditing:nil];
+    
+    [self endEditing:nil];
 }
 
 - (NSString *) text {

@@ -18,7 +18,6 @@
 @end
 
 @interface CustomCalendarViewController : ZKSuperViewController
-- (void)setDate:(NSString*)dateStr;
 @property (weak, nonatomic)id<CustomCalendarViewControllerDelegate>delegate;
 @end
 // 版权属于原作者
