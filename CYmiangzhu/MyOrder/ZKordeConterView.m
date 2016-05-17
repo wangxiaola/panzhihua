@@ -12,6 +12,8 @@
 #import "ZKOrderPaymentViewController.h"
 #import "ZKMoreReminderView.h"
 
+#import "ZKOrderDetailsViewController.h"
+
 #import "Order.h"
 #import "DataSigner.h"
 #import <AlipaySDK/AlipaySDK.h>
@@ -112,7 +114,14 @@
     //    NSLog(@" -- %@",model.img);
     return cell;
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //取出模型
+    ZKmyOrdeMode *model=self.listData[indexPath.section];
+    ZKOrderDetailsViewController *order = [[ZKOrderDetailsViewController alloc] initData:model];
+    [[self.contess navigationController] pushViewController:order animated:YES];
+    
+}
 /*
  *  返回每一个表格单元的高度
  */

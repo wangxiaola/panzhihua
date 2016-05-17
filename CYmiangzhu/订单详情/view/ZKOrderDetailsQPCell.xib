@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ZKOrderDetailsQPCellID" rowHeight="67" id="KGk-i7-Jjw" customClass="ZKOrderDetailsQPCell">
+            <rect key="frame" x="0.0" y="0.0" width="329" height="67"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="329" height="66"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="取票人姓名:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPO-lB-prz">
+                        <rect key="frame" x="8" y="10" width="75" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="may-2p-93d"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系电话   ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84C-WI-ukc">
+                        <rect key="frame" x="8" y="38" width="82" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GN-Id-xzE">
+                        <rect key="frame" x="91" y="10" width="27" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12377189831" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIX-uf-5Lv">
+                        <rect key="frame" x="91" y="38" width="87" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cPO-lB-prz" firstAttribute="leading" secondItem="84C-WI-ukc" secondAttribute="leading" id="27A-q8-h3A"/>
+                    <constraint firstItem="cPO-lB-prz" firstAttribute="firstBaseline" secondItem="1GN-Id-xzE" secondAttribute="firstBaseline" id="89M-yY-1DT"/>
+                    <constraint firstItem="1GN-Id-xzE" firstAttribute="leading" secondItem="cPO-lB-prz" secondAttribute="trailing" constant="8" symbolic="YES" id="9LQ-fb-Lq8"/>
+                    <constraint firstItem="84C-WI-ukc" firstAttribute="firstBaseline" secondItem="gIX-uf-5Lv" secondAttribute="firstBaseline" id="JLA-jo-74G"/>
+                    <constraint firstItem="84C-WI-ukc" firstAttribute="top" secondItem="cPO-lB-prz" secondAttribute="bottom" constant="8" symbolic="YES" id="KAd-MH-A1Q"/>
+                    <constraint firstItem="1GN-Id-xzE" firstAttribute="leading" secondItem="gIX-uf-5Lv" secondAttribute="leading" id="PE1-81-Exe"/>
+                    <constraint firstItem="cPO-lB-prz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="TTW-mh-JF8"/>
+                    <constraint firstItem="cPO-lB-prz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="mSw-zo-UuI"/>
+                    <constraint firstItem="84C-WI-ukc" firstAttribute="baseline" secondItem="gIX-uf-5Lv" secondAttribute="baseline" id="moX-4h-bAQ"/>
+                    <constraint firstItem="cPO-lB-prz" firstAttribute="baseline" secondItem="1GN-Id-xzE" secondAttribute="baseline" id="qfv-ae-Pgg"/>
+                    <constraint firstItem="84C-WI-ukc" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="rfz-z1-Vow"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="351.5" y="347.5"/>
+        </tableViewCell>
+    </objects>
+</document>

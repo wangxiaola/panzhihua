@@ -11,6 +11,7 @@
 #import "ZKCallLabelTableViewCell.h"
 #import "GSLocationTool.h"
 #import "ZKDateSelectionViewController.h"
+#import "ZKEventQueryViewController.h"
 
 static NSString *labelCell = @"labelCell";
 
@@ -83,7 +84,7 @@ static NSString *labelCell = @"labelCell";
         //1,创建一个日期格式化器
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         // 2,设置格式
-        [formatter setDateFormat:@"yyyy-M-d HH:mm"];
+        [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
         // 3,格式化日期
         NSString *dataStr = [formatter stringFromDate:date];
         self.dataTextFielf.text = dataStr;
@@ -254,7 +255,7 @@ static NSString *labelCell = @"labelCell";
         
         [inputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
         
-        [inputFormatter setDateFormat:@"yyyy-M-d HH:mm"];
+        [inputFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
         
         NSDate*inputDate = [inputFormatter dateFromString:string];
         
@@ -398,7 +399,11 @@ static NSString *labelCell = @"labelCell";
     }
     
     
+    ZKEventQueryViewController *vc = [[ZKEventQueryViewController alloc] init];
+    vc.eqIndex = 3;
+    [self.navigationController pushViewController:vc animated:YES];
 
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -18,7 +18,9 @@
 #import "ZKMyNotesViewController.h"
 #import "ZKMyFootprintViewController.h"
 #import "ZKComplaintsListViewController.h"
-#import "ZKAKeyAlarmViewController.h"
+//#import "ZKAKeyAlarmViewController.h"
+#import "ZKNavigationController.h"
+#import "ZKEventQueryViewController.h"
 
 @interface ZKmyListViewController ()<UITableViewDataSource,UITableViewDelegate,ZKsetViewControllerDelegate>
 
@@ -73,7 +75,7 @@
     
     NSArray *arr5 = [NSArray arrayWithObjects:@"我的投诉",@"my_cell_4",nil];
     
-    NSArray *arr6 = [NSArray arrayWithObjects:@"一键报警",@"message_phone",nil];
+    NSArray *arr6 = [NSArray arrayWithObjects:@"事件查询",@"message_phone",nil];
     
     NSArray *arr7 = [NSArray arrayWithObjects:@"更多服务",@"my_cell_5",nil];
     
@@ -540,8 +542,12 @@
     
     if (indexPath.section == 2) {
 
-        ZKAKeyAlarmViewController *aKeyVC =[[ZKAKeyAlarmViewController alloc]init];
-        [self.navigationController pushViewController:aKeyVC animated:YES];
+        ZKEventQueryViewController *aKeyVC =[[ZKEventQueryViewController alloc]init];
+        aKeyVC.isAddButton = YES;
+        ZKNavigationController *nav = [[ZKNavigationController alloc] initWithRootViewController:aKeyVC];
+        [self presentViewController:nav animated:NO completion:^{
+            
+        }];
 
         [[BaiduMobStat defaultStat] logEvent:@"service_go_emergent" eventLabel:@"服务-一键报警"];
     }

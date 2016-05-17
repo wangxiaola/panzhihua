@@ -167,7 +167,7 @@
     if ([self timeAfterSuper:_selectedDate]) {
 
         NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-        fmt.dateFormat = @"yyyy-M-d";
+        fmt.dateFormat = @"yyyy-MM-dd";
         NSString *dateStr = [fmt stringFromDate:_selectedDate];
         [self.delegate customCalendarViewController:self didSelectedDate:[NSString stringWithFormat:@"%@ %@",dateStr,self.hmStr]];
         [self.navigationController popViewControllerAnimated:YES];
@@ -198,7 +198,7 @@
     
     
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-    fmt.dateFormat = @"yyyyMd";
+    fmt.dateFormat = @"yyyyMMdd";
     
     NSInteger dateStr = [fmt stringFromDate:_selectedDate].integerValue;
     NSInteger newStr = [fmt stringFromDate:data].integerValue;

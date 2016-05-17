@@ -31,7 +31,7 @@
         
         self.backgroundColor = [UIColor whiteColor];
         _newDate = date;
-        _leftArray = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19",@"20",@"21",@"22",@"23",@"00"];
+        _leftArray = @[@"01",@"02",@"03",@"04",@"05",@"06",@"07",@"08",@"09",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19",@"20",@"21",@"22",@"23",@"00"];
         
         _rightArray = [NSMutableArray arrayWithCapacity:60];
         
@@ -42,7 +42,15 @@
             }
             else
             {
+                if (i < 10) {
+                    
+                 [_rightArray addObject:[NSString stringWithFormat:@"0%d",i]];
+                }
+                else
+                {
                 [_rightArray addObject:[NSString stringWithFormat:@"%d",i]];
+                }
+                
             }
             
         }
