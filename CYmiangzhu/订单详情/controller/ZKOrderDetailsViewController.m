@@ -293,6 +293,7 @@
         if (indexPath.section == 0) {
             
             ZKOrderDetailsDDCell *ddCell = [tableView dequeueReusableCellWithIdentifier:ZKOrderDetailsDDCellID];
+            ddCell.dataList = self.dataList;
             cell = ddCell;
         }
         else if (indexPath.section == 1)
@@ -301,11 +302,13 @@
             if (self.type == 1) {
                 //酒店
                  ZKOrderDetailsSpJdCell *spjdCell = [tableView dequeueReusableCellWithIdentifier:ZKOrderDetailsSpJdCellID];
+                spjdCell.dataList = self.dataList;
                 cell = spjdCell;
             }
             else
             {
                  ZKOrderDetailsSPCell *spCell = [tableView dequeueReusableCellWithIdentifier:ZKOrderDetailsSPCellID];
+                spCell.dataList = self.dataList;
                 cell = spCell;
             }
      
@@ -314,6 +317,7 @@
         {
         
             ZKOrderDetailsQPCell *qpCell = [tableView dequeueReusableCellWithIdentifier:ZKOrderDetailsQPCellID];
+            qpCell.dataList = self.dataList;
             cell = qpCell;
         }
     }

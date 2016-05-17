@@ -7,7 +7,9 @@
 //
 extern NSString *const ZKOrderDetailsSpJdCellID;
 #import <UIKit/UIKit.h>
+@class ZKOrderDetailsMode;
 
 @interface ZKOrderDetailsSpJdCell : UITableViewCell
 
+@property (nonatomic, strong) ZKOrderDetailsMode *dataList;
 @end

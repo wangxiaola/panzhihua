@@ -10,6 +10,8 @@ NSString *const ZKOrderDetailsDDCellID =@"ZKOrderDetailsDDCellID";
 
 #import "ZKOrderDetailsDDCell.h"
 #import "ZKPopImageView.h"
+#import "ZKOrderDetailsMode.h"
+
 @implementation ZKOrderDetailsDDCell
 
 - (void)awakeFromNib {
@@ -21,6 +23,11 @@ NSString *const ZKOrderDetailsDDCellID =@"ZKOrderDetailsDDCellID";
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setDataList:(ZKOrderDetailsMode *)dataList
+{
+
 }
 - (IBAction)ewmButton:(id)sender {
 

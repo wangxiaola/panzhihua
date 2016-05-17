@@ -8,6 +8,7 @@
 NSString *const ZKOrderDetailsQPCellID = @"ZKOrderDetailsQPCellID";
 
 #import "ZKOrderDetailsQPCell.h"
+#import "ZKOrderDetailsMode.h"
 
 @implementation ZKOrderDetailsQPCell
 
@@ -15,7 +16,10 @@ NSString *const ZKOrderDetailsQPCellID = @"ZKOrderDetailsQPCellID";
     [super awakeFromNib];
     // Initialization code
 }
+- (void)setDataList:(ZKOrderDetailsMode *)dataList
+{
 
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

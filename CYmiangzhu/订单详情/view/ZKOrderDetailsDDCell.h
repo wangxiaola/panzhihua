@@ -7,7 +7,10 @@
 //
 extern NSString *const ZKOrderDetailsDDCellID;
 #import <UIKit/UIKit.h>
+@class ZKOrderDetailsMode;
+
 @interface ZKOrderDetailsDDCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *ewmButton;
 
+@property(nonatomic, strong) ZKOrderDetailsMode *dataList;
 @end
