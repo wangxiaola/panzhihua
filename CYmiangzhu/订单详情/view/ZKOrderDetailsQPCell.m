@@ -6,6 +6,7 @@
 //  Copyright © 2016年 WangXiaoLa. All rights reserved.
 //
 NSString *const ZKOrderDetailsQPCellID = @"ZKOrderDetailsQPCellID";
+
 #import "ZKOrderDetailsQPCell.h"
 
 @implementation ZKOrderDetailsQPCell

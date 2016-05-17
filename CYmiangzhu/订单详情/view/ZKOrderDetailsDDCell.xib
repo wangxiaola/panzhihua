@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -13,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="378" height="118"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="378" height="117"/>
+                <rect key="frame" x="0.0" y="0.0" width="378" height="117.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单编号:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IL-vg-7XP">
@@ -73,15 +73,37 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOd-py-swL">
+                        <rect key="frame" x="10" y="117" width="368" height="0.5"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="ixj-aH-ln4"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IG-dR-Hsb">
+                        <rect key="frame" x="318" y="57" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="Xg6-WR-0E3"/>
+                            <constraint firstAttribute="height" constant="50" id="i2N-AY-R8A"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="QQ_TL.png"/>
+                        <connections>
+                            <action selector="ewmButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rgc-VB-W5L"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="oOd-py-swL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="04S-Lb-qhJ"/>
+                    <constraint firstItem="oOd-py-swL" firstAttribute="top" secondItem="1IG-dR-Hsb" secondAttribute="bottom" constant="10" id="1xx-1s-nU2"/>
                     <constraint firstItem="7gG-Jh-cqd" firstAttribute="top" secondItem="5IL-vg-7XP" secondAttribute="bottom" constant="8" symbolic="YES" id="2VA-kF-qHh"/>
                     <constraint firstItem="oQu-d1-T7W" firstAttribute="leading" secondItem="EVw-B3-kDY" secondAttribute="leading" id="30d-df-NGc"/>
+                    <constraint firstAttribute="trailing" secondItem="1IG-dR-Hsb" secondAttribute="trailing" constant="10" id="6KA-ZT-i3E"/>
                     <constraint firstItem="7gG-Jh-cqd" firstAttribute="leading" secondItem="vWk-IB-Dpq" secondAttribute="leading" id="7wl-Op-t39"/>
                     <constraint firstItem="vWk-IB-Dpq" firstAttribute="firstBaseline" secondItem="EVw-B3-kDY" secondAttribute="firstBaseline" id="DNk-UO-dA2"/>
                     <constraint firstItem="7ec-39-fwR" firstAttribute="leading" secondItem="oQu-d1-T7W" secondAttribute="leading" id="Iqo-ji-79C"/>
                     <constraint firstItem="EVw-B3-kDY" firstAttribute="leading" secondItem="ss8-Me-4Mc" secondAttribute="leading" id="N4W-1b-5gb"/>
                     <constraint firstItem="d3q-HB-47X" firstAttribute="baseline" secondItem="ss8-Me-4Mc" secondAttribute="baseline" id="NHc-SD-Wxn"/>
+                    <constraint firstAttribute="trailing" secondItem="oOd-py-swL" secondAttribute="trailing" id="Plk-VZ-z1o"/>
                     <constraint firstItem="vWk-IB-Dpq" firstAttribute="leading" secondItem="d3q-HB-47X" secondAttribute="leading" id="RBR-Yk-bAb"/>
                     <constraint firstItem="7gG-Jh-cqd" firstAttribute="firstBaseline" secondItem="oQu-d1-T7W" secondAttribute="firstBaseline" id="YdM-Xf-HJa"/>
                     <constraint firstItem="d3q-HB-47X" firstAttribute="top" secondItem="vWk-IB-Dpq" secondAttribute="bottom" constant="8" symbolic="YES" id="ZIT-He-IdG"/>
@@ -95,10 +117,17 @@
                     <constraint firstItem="d3q-HB-47X" firstAttribute="firstBaseline" secondItem="ss8-Me-4Mc" secondAttribute="firstBaseline" id="mPO-di-DUs"/>
                     <constraint firstItem="7ec-39-fwR" firstAttribute="leading" secondItem="5IL-vg-7XP" secondAttribute="trailing" constant="8" symbolic="YES" id="ndS-tV-kUs"/>
                     <constraint firstItem="vWk-IB-Dpq" firstAttribute="top" secondItem="7gG-Jh-cqd" secondAttribute="bottom" constant="8" symbolic="YES" id="nfw-Ty-af1"/>
+                    <constraint firstAttribute="bottom" secondItem="oOd-py-swL" secondAttribute="bottom" id="p37-49-H0v"/>
                     <constraint firstItem="5IL-vg-7XP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="t7h-ZC-Ef3"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="376" y="373"/>
+            <connections>
+                <outlet property="ewmButton" destination="1IG-dR-Hsb" id="wqC-q7-OUF"/>
+            </connections>
+            <point key="canvasLocation" x="373" y="363"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="QQ_TL.png" width="33" height="33"/>
+    </resources>
 </document>

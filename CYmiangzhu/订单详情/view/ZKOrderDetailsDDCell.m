@@ -9,7 +9,7 @@
 NSString *const ZKOrderDetailsDDCellID =@"ZKOrderDetailsDDCellID";
 
 #import "ZKOrderDetailsDDCell.h"
-
+#import "ZKPopImageView.h"
 @implementation ZKOrderDetailsDDCell
 
 - (void)awakeFromNib {
@@ -21,6 +21,12 @@ NSString *const ZKOrderDetailsDDCellID =@"ZKOrderDetailsDDCellID";
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+- (IBAction)ewmButton:(id)sender {
+
+    ZKPopImageView *pop = [[ZKPopImageView alloc] initImage:[UIImage imageNamed:@"QQ_TL"]];
+    [pop show];
+
 }
 
 @end

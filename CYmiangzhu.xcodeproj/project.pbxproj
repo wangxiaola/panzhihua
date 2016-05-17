@@ -700,6 +700,7 @@
 		A12C3EC81CE86FF3007B8492 /* ZKInforPjTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12C3EC61CE86FF3007B8492 /* ZKInforPjTableViewCell.xib */; };
 		A12C3ECC1CE89C02007B8492 /* ZKInforPjCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A12C3ECA1CE89C02007B8492 /* ZKInforPjCollectionViewCell.m */; };
 		A12C3ECD1CE89C02007B8492 /* ZKInforPjCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12C3ECB1CE89C02007B8492 /* ZKInforPjCollectionViewCell.xib */; };
+		A16A4A7E1CEB496600969205 /* ZKPopImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A16A4A7D1CEB496600969205 /* ZKPopImageView.m */; };
 		A17005261C1882A300119402 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = A17004FC1C1882A300119402 /* MJRefreshAutoFooter.m */; };
 		A17005271C1882A300119402 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = A17004FE1C1882A300119402 /* MJRefreshBackFooter.m */; };
 		A17005281C1882A300119402 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A17005001C1882A300119402 /* MJRefreshComponent.m */; };
@@ -1932,6 +1933,8 @@
 		A12C3EC91CE89C02007B8492 /* ZKInforPjCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKInforPjCollectionViewCell.h; sourceTree = "<group>"; };
 		A12C3ECA1CE89C02007B8492 /* ZKInforPjCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKInforPjCollectionViewCell.m; sourceTree = "<group>"; };
 		A12C3ECB1CE89C02007B8492 /* ZKInforPjCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKInforPjCollectionViewCell.xib; sourceTree = "<group>"; };
+		A16A4A7C1CEB496600969205 /* ZKPopImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKPopImageView.h; path = "订单详情/view/ZKPopImageView.h"; sourceTree = "<group>"; };
+		A16A4A7D1CEB496600969205 /* ZKPopImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKPopImageView.m; path = "订单详情/view/ZKPopImageView.m"; sourceTree = "<group>"; };
 		A17004FB1C1882A300119402 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		A17004FC1C1882A300119402 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		A17004FD1C1882A300119402 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -2980,6 +2983,8 @@
 				12C81EBF1B1590E800E61804 /* ZKmerchandiseView.m */,
 				12C81EC01B1590E800E61804 /* ZKpoperFanView.h */,
 				12C81EC11B1590E800E61804 /* ZKpoperFanView.m */,
+				A16A4A7C1CEB496600969205 /* ZKPopImageView.h */,
+				A16A4A7D1CEB496600969205 /* ZKPopImageView.m */,
 				12C81EC21B1590E800E61804 /* ZKMoreReminderView.h */,
 				12C81EC31B1590E800E61804 /* ZKMoreReminderView.m */,
 				12C81EC41B1590E800E61804 /* Toast+UIView.h */,
@@ -5482,6 +5487,7 @@
 				1238618C1B1571B80006EB8F /* ZKAppDelegate.m in Sources */,
 				3B5F12A21CE32D22009814BE /* MASViewConstraint.m in Sources */,
 				1282F5D11B7B2C9600BC9C03 /* ZKrecommenMode.m in Sources */,
+				A16A4A7E1CEB496600969205 /* ZKPopImageView.m in Sources */,
 				3B1A865E1C14347300E81C2D /* ZKOrderPaymentViewController.m in Sources */,
 				A17005371C1882A300119402 /* UIScrollView+MJRefresh.m in Sources */,
 				EA13AC2B1B8DA60C00E2686B /* NSObject+MJCoding.m in Sources */,

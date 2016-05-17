@@ -270,6 +270,11 @@ static NSString *labelCell = @"labelCell";
 {
     return 8;
 }
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+
+    return [[UIView alloc]init];
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 2)

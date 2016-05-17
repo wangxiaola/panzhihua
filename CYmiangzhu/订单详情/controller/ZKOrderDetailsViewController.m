@@ -23,6 +23,7 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *lefTitisArray;
 @property (nonatomic, assign) NSInteger type;
+
 @end
 
 @implementation ZKOrderDetailsViewController
@@ -120,6 +121,7 @@
 - (UIView*)cjFooterView
 {
     
+    
     UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kDeviceWidth, 120)];
     footerView.backgroundColor = YJCorl(249, 249, 249);
     
@@ -190,7 +192,75 @@
         
     
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
 
+    if (section == 0) {
+        
+        return 44;
+    }
+    else
+    {
+    
+        return 0.1;
+    }
+}
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+
+    if (section == 0) {
+        
+        UIView *footeView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 44)];
+        footeView.backgroundColor = [UIColor whiteColor];
+        
+        UIButton *bty = [UIButton buttonWithType:UIButtonTypeCustom];
+        bty.layer.masksToBounds = YES;
+        bty.layer.cornerRadius  = 4;
+        bty.layer.borderColor   = [UIColor orangeColor].CGColor;
+        bty.layer.borderWidth   = 1;
+        bty.titleLabel.font     = [UIFont systemFontOfSize:13];
+        [bty setTitle:@"立即支付" forState:UIControlStateNormal];
+        [bty setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        bty.tag                 = 1000;
+        [bty addTarget:self action:@selector(stateClick:) forControlEvents:UIControlEventTouchUpInside];
+        [footeView addSubview:bty];
+        
+        [bty mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(-10);
+            make.width.mas_equalTo(80);
+            make.top.mas_equalTo(8);
+            make.bottom.mas_equalTo(-8);
+        }];
+        if (self.type == 1) {
+            
+            UIButton *cebty = [UIButton buttonWithType:UIButtonTypeCustom];
+            cebty.layer.masksToBounds = YES;
+            cebty.layer.cornerRadius  = 4;
+            cebty.layer.borderColor   = CYBColorGreen.CGColor;
+            cebty.layer.borderWidth   = 1;
+            cebty.titleLabel.font     = [UIFont systemFontOfSize:13];
+            [cebty setTitle:@"取消订单" forState:UIControlStateNormal];
+            [cebty setTitleColor:CYBColorGreen forState:UIControlStateNormal];
+            cebty.tag                 = 1001;
+            [cebty addTarget:self action:@selector(stateClick:) forControlEvents:UIControlEventTouchUpInside];
+            [footeView addSubview:cebty];
+            
+            [cebty mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.mas_equalTo(bty.mas_left).mas_offset(-10);
+                make.width.mas_equalTo(80);
+                make.top.mas_equalTo(8);
+                make.bottom.mas_equalTo(-8);
+            }];
+        }
+        
+        return footeView;
+    }
+    else
+    {
+    
+        return  nil;
+    }
+}
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -272,7 +342,19 @@
     
 }
 
+- (void)stateClick:(UIButton*)sender
+{
 
+    if (sender.tag == 1001) {
+        
+        //取消订单
+    }
+    else
+    {
+    
+    
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

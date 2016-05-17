@@ -8,5 +8,6 @@
 extern NSString *const ZKOrderDetailsDDCellID;
 #import <UIKit/UIKit.h>
 @interface ZKOrderDetailsDDCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *ewmButton;
 
 @end
