@@ -43,6 +43,7 @@ static  NSString *homeIndentifierTow=@"homeCellTwo";
         _searchBar = [[YYSearchBar alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth-80, 60)];
         _searchBar.backgroundColor = [UIColor clearColor];
         _searchBar.placeString = @"酒店/宾馆";
+        _searchBar.isWeeter = YES;
         _searchBar.userInteractionEnabled = YES;
     }
     

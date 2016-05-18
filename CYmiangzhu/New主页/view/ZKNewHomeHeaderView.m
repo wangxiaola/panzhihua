@@ -7,7 +7,7 @@
 //
 
 #import "ZKNewHomeHeaderView.h"
-
+#import "ZKScenicTableViewController.h"
 
 @implementation ZKNewHomeHeaderView
 
@@ -75,6 +75,8 @@
         bty.backgroundColor = [UIColor whiteColor];
         [buttonView addSubview:bty];
         bty.frame = CGRectMake(buttonW*i, 0, buttonW, buttonH);
+        bty.tag = i+1000 ;
+        [bty addTarget:self action:@selector(btyClick:) forControlEvents:UIControlEventTouchUpInside];
         
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 42, 42)];
         imageView.backgroundColor = [UIColor whiteColor];
@@ -97,7 +99,19 @@
     
 
 }
+
+
+- (void)btyClick:(UIButton*)sender
+{
+    NSInteger index = sender.tag - 1000;
+    
+    ZKScenicTableViewController *scenicVc = [[ZKScenicTableViewController alloc] init];
+    scenicVc.scenicType = index;
+    [[self.controller navigationController] pushViewController:scenicVc animated:YES];
+}
+
 #pragma mark SDCycleScrollViewDelegate
+
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index;
 {

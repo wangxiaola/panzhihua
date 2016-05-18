@@ -59,7 +59,14 @@
     }
     
     searchField.background = nil;
-    searchField.backgroundColor = TabelBackCorl;
+    if (self.isWeeter == YES) {
+     searchField.backgroundColor = [UIColor whiteColor];
+    }
+    else
+    {
+     searchField.backgroundColor = TabelBackCorl;
+    }
+   
     searchField.textColor = [UIColor colorWithWhite:0x55/255.0 alpha:1];
     searchField.borderStyle = UITextBorderStyleNone;
     searchField.layer.masksToBounds = YES;
