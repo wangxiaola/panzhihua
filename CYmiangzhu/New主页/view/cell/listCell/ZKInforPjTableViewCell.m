@@ -22,6 +22,7 @@ NSString *const ZKInforPjCellID = @"ZKInforPjCellID";
     [flowLayout setScrollDirection:
      UICollectionViewScrollDirectionVertical];//设置其布局方向
     flowLayout.minimumInteritemSpacing = 5;
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     flowLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);//设置其边界
     self.collectionView.collectionViewLayout = flowLayout;
 
